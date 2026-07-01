@@ -147,7 +147,7 @@ export default function Home() {
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
             >
               <Image
-                src="/pics/me.png"
+                src="/pics/me.jpeg"
                 alt={t.photoAlt}  // e.g. "Karim Matar"
                 width={240}
                 height={240}
