@@ -1,0 +1,43 @@
+{
+      "Home": {
+
+  "tagline": "Web Developer",
+  "headline": "Karim Matar",
+  "subtext": "I build fast, modern, and responsive web experiences using React, Next.js, Tailwind CSS, and Framer Motion.",
+  "projectsTitle": "Projects",
+  "contactTitle": "Contact",
+  "contactIntro": "Have a project or want to collaborate? Send a message and I’ll get back to you.",
+  "contactNameLabel": "Name",
+  "contactEmailLabel": "Email",
+  "contactMessageLabel": "Message",
+  "contactButton": "Send message",
+  "contactSuccess": "Message sent successfully.",
+  "contactError": "Something went wrong. Please try again.",
+  "heroPrimaryCta": "View projects",
+"heroSecondaryCta": "Contact me",
+  "aboutTitle": "About",
+"aboutText": "I specialize in building performant, modern web interfaces with React, Next.js, and Tailwind. I care about clean UX, animations that feel natural, and code that scales.",
+  "projects": [
+      {
+        "id": "lexiplay",
+        "title": "LexiPlay",
+        "description": "A gamified web application that helps children with dyslexialearn new words through interactive games and quizzes."
+      },
+      {
+        "id": "donation",
+        "title": "Donation App",
+        "description": "A donation environment using Mollie for visitors of De warmste week."
+      }
+    ],
+    "skillsTitle": "Skills",
+"skills": [
+  { "name": "PHP", "logoSrc": "/skills/php.svg" },
+  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
+  { "name": "HTML", "logoSrc": "/skills/html.svg" },
+  { "name": "CSS", "logoSrc": "/skills/css.svg" },
+  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
+  { "name": "React", "logoSrc": "/skills/react.svg" },
+  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" }
+]
+}
+}

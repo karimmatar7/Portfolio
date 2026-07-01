@@ -1,0 +1,42 @@
+{
+  "Home": {
+    "tagline": "Webontwikkelaar",
+    "headline": "Karim Matar",
+    "subtext": "Ik bouw snelle, moderne en responsieve webervaringen met React, Next.js, Tailwind CSS en Framer Motion.",
+    "projectsTitle": "Projecten",
+    "contactTitle": "Contact",
+    "contactIntro": "Heb je een project of wil je samenwerken? Stuur een bericht en ik neem contact met je op.",
+    "contactNameLabel": "Naam",
+    "contactEmailLabel": "E-mail",
+    "contactMessageLabel": "Bericht",
+    "contactButton": "Bericht versturen",
+    "contactSuccess": "Bericht succesvol verzonden.",
+    "contactError": "Er ging iets mis. Probeer het opnieuw.",
+    "aboutTitle": "Over mij",
+    "heroPrimaryCta": "Bekijk projecten",
+"heroSecondaryCta": "Neem contact op",
+"aboutText": "Ik ben gespecialiseerd in het bouwen van performante, moderne webinterfaces met React, Next.js en Tailwind. Ik let op clean UX, animaties die zich natuurlijk aanvoelen en code die schaalbaar is.",
+        "projects": [
+      {
+        "id": "lexiplay",
+        "title": "LexiPlay",
+        "description": "Een gamified web applicatie die kinderen met dyslexie helpt nieuwe woorden te leren via interactieve spellen en quizzen."
+      },
+      {
+        "id": "donation",
+        "title": "Donatieapp",
+        "description": "Een donatieomgeving met Mollie voor bezoekers van De warmste week."
+      }
+    ],
+      "skillsTitle": "Skills",
+"skills": [
+  { "name": "PHP", "logoSrc": "/skills/php.svg" },
+  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
+  { "name": "HTML", "logoSrc": "/skills/html.svg" },
+  { "name": "CSS", "logoSrc": "/skills/css.svg" },
+  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
+  { "name": "React", "logoSrc": "/skills/react.svg" },
+  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" }
+]
+  }
+}

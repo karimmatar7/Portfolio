@@ -1,0 +1,42 @@
+{
+  "Home": {
+    "tagline": "مطوّر ويب",
+    "headline": "كريم مطر",
+    "subtext": "أبني تجارب ويب سريعة وحديثة ومتجاوبة باستخدام React و Next.js و Tailwind CSS و Framer Motion.",
+    "projectsTitle": "المشاريع",
+    "contactTitle": "تواصل معي",
+    "contactIntro": "هل لديك مشروع أو ترغب في التعاون؟ أرسل رسالة وسأرد عليك في أقرب وقت ممكن.",
+    "contactNameLabel": "الاسم",
+    "contactEmailLabel": "البريد الإلكتروني",
+    "contactMessageLabel": "الرسالة",
+    "contactButton": "إرسال الرسالة",
+    "contactSuccess": "تم إرسال الرسالة بنجاح.",
+    "contactError": "حدث خطأ ما. حاول مرة أخرى.",
+    "aboutTitle": "عنّي",
+    "heroPrimaryCta": "عرض المشاريع",
+"heroSecondaryCta": "تواصل معي",
+"aboutText": "أنا متخصص في بناء واجهات ويب حديثة وفعالة باستخدام React و Next.js و Tailwind. أهتم بتجربة المستخدم النظيفة، والرسوم المتحركة التي تبدو طبيعية، والكود الذي يمكن توسيعه.",
+      "projects": [
+      {
+        "id": "lexiplay",
+        "title": "LexiPlay",
+        "description": "تطبيق ويب مُحَدَّث يساعد الأطفال المصابين بالصداع على تعلم الكلمات الجديدة من خلال الألعاب والاختبارات التفاعلية."
+      },
+      {
+        "id": "donation",
+        "title": "تطبيق التبرع",
+        "description": "بيئة تبرع باستخدام Mollie لزوار De warmste week"
+      }
+    ],
+      "skillsTitle": "المهارات",
+"skills": [
+  { "name": "PHP", "logoSrc": "/skills/php.svg" },
+  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
+  { "name": "HTML", "logoSrc": "/skills/html.svg" },
+  { "name": "CSS", "logoSrc": "/skills/css.svg" },
+  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
+  { "name": "React", "logoSrc": "/skills/react.svg" },
+  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" }
+]
+  }
+}
