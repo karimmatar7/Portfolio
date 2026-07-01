@@ -148,7 +148,7 @@ export default function Home() {
             >
               <Image
                 src="/pics/me.png"
-                alt={t.photoAlt /* e.g. "Karim Matar" */}
+                alt={t.photoAlt}  // e.g. "Karim Matar"
                 width={240}
                 height={240}
                 className="h-full w-full object-cover"
