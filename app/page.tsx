@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-
 import enMessages from "./lang/en.json";
 import nlMessages from "./lang/nl.json";
 import arMessages from "./lang/ar.json";
@@ -11,26 +10,30 @@ import { ProjectsSection } from "./components/ProjectsSection";
 import { ContactForm } from "./components/ContactForm";
 import { SkillsCarousel } from "./components/SkillsCarousel";
 
-const pageVariants = {
+const pageVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 0.61, 0.36, 1],
+      ease: [0.22, 0.61, 0.36, 1] as const,  // key change
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
   },
 };
 
-const sectionVariants = {
+
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,   // key change
+    },
   },
 };
 
