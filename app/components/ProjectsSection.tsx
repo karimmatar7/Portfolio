@@ -30,7 +30,12 @@ type LocalizedProject = {
 
 type ProjectsMessages = {
   projectsTitle: string;
-  projects: LocalizedProject[];
+  projects: {
+    title: string;
+    description: string;
+    link?: string;
+  }[];
+  visitLabel: string;   // add this line
 };
 
 export function ProjectsSection({ messages }: { messages: ProjectsMessages }) {
