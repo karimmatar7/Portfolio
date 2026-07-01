@@ -205,11 +205,6 @@ export default function Home() {
           }}
         />
 
-        {/* Footer */}
-        <footer className="pt-8 text-xs text-slate-500 flex justify-between">
-          <span>{t.footerLeft}</span>
-          <span>{t.footerRight}</span>
-        </footer>
       </motion.div>
     </main>
   );
