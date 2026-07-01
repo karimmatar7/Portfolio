@@ -28,14 +28,16 @@ type LocalizedProject = {
   description: string;
 };
 
+type ProjectBase = {
+  id: string;             // or number, but use the same type in both places
+  title: string;
+  description: string;
+  link?: string;
+};
+
 type ProjectsMessages = {
   projectsTitle: string;
-  projects: {
-    title: string;
-    description: string;
-    link?: string;
-  }[];
-  visitLabel: string;   // add this line
+  projects: ProjectBase[];
 };
 
 export function ProjectsSection({ messages }: { messages: ProjectsMessages }) {
