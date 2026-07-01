@@ -16,6 +16,8 @@
   "contactError": "Something went wrong. Please try again.",
   "heroPrimaryCta": "View projects",
 "heroSecondaryCta": "Contact me",
+    "projectsVisitLabel": "Visit project",
+
   "aboutTitle": "About",
 "aboutText": "I specialize in building performant, modern web interfaces with React, Next.js, and Tailwind. I care about clean UX, animations that feel natural, and code that scales.",
   "projects": [

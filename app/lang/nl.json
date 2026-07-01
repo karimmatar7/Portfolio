@@ -17,6 +17,7 @@
     "aboutTitle": "Over mij",
     "heroPrimaryCta": "Bekijk projecten",
 "heroSecondaryCta": "Neem contact op",
+    "projectsVisitLabel": "Project bezoeken",
 "aboutText": "Ik ben gespecialiseerd in het bouwen van performante, moderne webinterfaces met React, Next.js en Tailwind. Ik let op clean UX, animaties die zich natuurlijk aanvoelen en code die schaalbaar is.",
         "projects": [
       {

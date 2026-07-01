@@ -38,6 +38,7 @@ type ProjectBase = {
 type ProjectsMessages = {
   projectsTitle: string;
   projects: ProjectBase[];
+    projectsVisitLabel: string;   
 };
 
 export function ProjectsSection({ messages }: { messages: ProjectsMessages }) {
@@ -76,7 +77,7 @@ export function ProjectsSection({ messages }: { messages: ProjectsMessages }) {
                 rel="noreferrer"
                 className="inline-flex items-center text-sm text-red-400 hover:text-red-300 transition-colors"
               >
-                Visit project
+  {messages.projectsVisitLabel}
                 <span className="ml-1">↗</span>
               </a>
             </motion.article>

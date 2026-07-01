@@ -187,7 +187,7 @@ export default function Home() {
           messages={{
             projectsTitle: t.projectsTitle,
             projects: t.projects,
-            visitLabel: t.projectsVisitLabel, // e.g. "Visit project"
+    projectsVisitLabel: t.projectsVisitLabel,
           }}
         />
 

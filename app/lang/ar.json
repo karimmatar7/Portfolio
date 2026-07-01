@@ -15,6 +15,7 @@
     "contactSuccess": "تم إرسال الرسالة بنجاح.",
     "contactError": "حدث خطأ ما. حاول مرة أخرى.",
     "aboutTitle": "عنّي",
+    "projectsVisitLabel": "زيارة المشروع",
     "heroPrimaryCta": "عرض المشاريع",
 "heroSecondaryCta": "تواصل معي",
 "aboutText": "أنا متخصص في بناء واجهات ويب حديثة وفعالة باستخدام React و Next.js و Tailwind. أهتم بتجربة المستخدم النظيفة، والرسوم المتحركة التي تبدو طبيعية، والكود الذي يمكن توسيعه.",
