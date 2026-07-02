@@ -207,7 +207,7 @@ export default function Home() {
         />
 
 <motion.section variants={sectionVariants}>
-  <SocialLinks />
+<SocialLinks socialTitle={t.socialTitle} />
 </motion.section>
 
       </motion.div>

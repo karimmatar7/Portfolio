@@ -6,11 +6,16 @@ type SocialLink = {
   iconSrc: string;
 };
 
+type SocialLinksProps = {
+  socialTitle?: string; 
+};
+
 const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/karim-matar-81427224b/",
-iconSrc: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg",
+    iconSrc:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg",
   },
   {
     name: "GitHub",
@@ -24,11 +29,11 @@ iconSrc: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg",
   },
 ];
 
-export function SocialLinks() {
+export function SocialLinks({ socialTitle }: SocialLinksProps) {
   return (
     <section className="space-y-4" id="socials">
-      <h2 className="text-lg font-semibold text-slate-100">
-        Social platforms
+      <h2 className="text-xl sm:text-2xl font-semibold text-slate-100">
+        {socialTitle ?? "Social platforms"}
       </h2>
 
       <div className="flex flex-wrap gap-3">
@@ -40,15 +45,15 @@ export function SocialLinks() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/80 px-3 py-2 text-xs sm:text-sm text-slate-100 hover:border-red-500 hover:text-red-200 transition-colors"
           >
-         <img
-  src={social.iconSrc}
-  alt=""
-  width={18}
-  height={18}
-  className={`h-4 w-4 sm:h-5 sm:w-5 ${
-    social.name === "LinkedIn" ? "invert" : ""
-  }`}
-/>
+            <img
+              src={social.iconSrc}
+              alt={social.name}
+              width={18}
+              height={18}
+              className={`h-4 w-4 sm:h-5 sm:w-5 ${
+                social.name === "LinkedIn" ? "invert" : ""
+              }`}
+            />
             <span>{social.name}</span>
           </a>
         ))}
