@@ -9,6 +9,7 @@ import arMessages from "./lang/ar.json";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { ContactForm } from "./components/ContactForm";
 import { SkillsCarousel } from "./components/SkillsCarousel";
+import { SocialLinks } from "./components/SocialLinks";
 
 const pageVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -204,6 +205,10 @@ export default function Home() {
             contactError: t.contactError,
           }}
         />
+
+<motion.section variants={sectionVariants}>
+  <SocialLinks />
+</motion.section>
 
       </motion.div>
     </main>

@@ -3,7 +3,7 @@
     "brandLabel": "PORTFOLIO",
   "tagline": "Web Developer",
   "headline": "Karim Matar",
-  "subtext": "I build fast, modern, and responsive web experiences using React, Next.js, Tailwind CSS, and Framer Motion.",
+  "subtext": "I create responsive, user‑friendly web applications that deliver clear, professional experiences across devices.",
       "photoAlt": "Karim Matar", 
   "projectsTitle": "Projects",
   "contactTitle": "Contact",
@@ -19,7 +19,7 @@
     "projectsVisitLabel": "Visit project",
 
   "aboutTitle": "About",
-"aboutText": "I specialize in building performant, modern web interfaces with React, Next.js, and Tailwind. I care about clean UX, animations that feel natural, and code that scales.",
+"aboutText": "As a junior full‑stack web developer, I focus on building structured, reliable solutions with clean front‑end layouts and solid back‑end logic, always aiming for a polished user experience.",
   "projects": [
       {
         "id": "lexiplay",

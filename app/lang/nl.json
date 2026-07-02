@@ -3,7 +3,7 @@
         "brandLabel": "PORTFOLIO",
     "tagline": "Webontwikkelaar",
     "headline": "Karim Matar",
-    "subtext": "Ik bouw snelle, moderne en responsieve webervaringen met React, Next.js, Tailwind CSS en Framer Motion.",
+    "subtext": "Ik ontwikkel responsieve, gebruiksvriendelijke webapplicaties die op elk apparaat een duidelijke, professionele ervaring bieden.",
         "photoAlt": "Karim Matar",  
     "projectsTitle": "Projecten",
     "contactTitle": "Contact",
@@ -18,7 +18,7 @@
     "heroPrimaryCta": "Bekijk projecten",
 "heroSecondaryCta": "Neem contact op",
     "projectsVisitLabel": "Project bezoeken",
-"aboutText": "Ik ben gespecialiseerd in het bouwen van performante, moderne webinterfaces met React, Next.js en Tailwind. Ik let op clean UX, animaties die zich natuurlijk aanvoelen en code die schaalbaar is.",
+"aboutText": "Als junior full‑stack webontwikkelaar richt ik mij op het bouwen van gestructureerde, betrouwbare oplossingen met overzichtelijke front‑end layouts en een solide back‑end, steeds met een verzorgde gebruikerservaring als doel.",
         "projects": [
       {
         "id": "lexiplay",
