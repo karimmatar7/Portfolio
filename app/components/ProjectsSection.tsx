@@ -43,7 +43,7 @@ type ProjectsMessages = {
 
 export function ProjectsSection({ messages }: { messages: ProjectsMessages }) {
   return (
-    <motion.section className="space-y-6" variants={sectionVariants}>
+    <motion.section id="projects" className="space-y-6" variants={sectionVariants}>
       <h2 className="text-xl sm:text-2xl font-semibold text-slate-100">
         {messages.projectsTitle}
       </h2>
