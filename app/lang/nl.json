@@ -40,7 +40,13 @@
   { "name": "CSS", "logoSrc": "/skills/css.svg" },
   { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
   { "name": "React", "logoSrc": "/skills/react.svg" },
-  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" }
+  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" },
+  { "name": "Node.js", "logoSrc": "/skills/node.svg" },
+  { "name": "Arduino", "logoSrc": "/skills/arduino.svg" },
+  { "name": "Craft CMS", "logoSrc": "/skills/craft.svg" },
+  { "name": "Tailwind CSS", "logoSrc": "/skills/tailwindcss.svg" },
+      { "name": "Git", "logoSrc": "/skills/git.svg" }
+
 ]
   }
 }
