@@ -11,6 +11,6 @@ export const projects = [
     title: "Donation app",
     description:
       "A donation environment using Mollie for visitors of De warmste week",
-    link: "https://github.com/karimmatar7/DWNE-Donation",
+    link: "https://dwne-donation.vercel.app/",
   },
 ];
