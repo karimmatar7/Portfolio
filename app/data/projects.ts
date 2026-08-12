@@ -13,4 +13,11 @@ export const projects = [
       "A donation environment using Mollie for visitors of De warmste week",
     link: "https://dwne-donation.vercel.app/",
   },
+   {
+    id: "doodley",
+    title: "Doodley",
+    description:
+      "A creative drawing app for friends or family to draw and guess each other's drawings in real-time.",
+    link: "https://doodley-eight.vercel.app/",
+  },
 ];
