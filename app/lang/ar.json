@@ -1,51 +1,111 @@
 {
   "Home": {
-        "brandLabel": "PORTFOLIO",
-    "tagline": "مطوّر ويب",
-    "headline": "كريم مطر",
-    "subtext": "أصمّم وأطوّر تطبيقات ويب متجاوبة وسهلة الاستخدام، تقدّم تجربة واضحة واحترافية على مختلف الأجهزة.",
-        "photoAlt": "Karim Matar",   
-    "projectsTitle": "المشاريع",
-    "contactTitle": "تواصل معي",
-    "contactIntro": "هل لديك مشروع أو ترغب في التعاون؟ أرسل رسالة وسأرد عليك في أقرب وقت ممكن.",
-    "contactNameLabel": "الاسم",
-    "contactEmailLabel": "البريد الإلكتروني",
-    "contactMessageLabel": "الرسالة",
-    "contactButton": "إرسال الرسالة",
-    "contactSuccess": "تم إرسال الرسالة بنجاح.",
-    "contactError": "حدث خطأ ما. حاول مرة أخرى.",
-    "aboutTitle": "عنّي",
-    "projectsVisitLabel": "زيارة المشروع",
-    "heroPrimaryCta": "عرض المشاريع",
-    "socialTitle": "المنصات الاجتماعية",
-    "heroSecondaryCta": "تواصل معي",
-    "aboutText": "بصفتي مطوّر ويب متكامل (Full‑stack) مبتدئ، أركّز على إنشاء حلول منظّمة وموثوقة بواجهات أمامية واضحة ومنطق خلفي قوي، مع حرص دائم على تجربة مستخدم متقنة.",
-      "projects": [
-      {
-        "id": "lexiplay",
-        "title": "LexiPlay",
-        "description": "تطبيق ويب مُحَدَّث يساعد الأطفال المصابين بالصداع على تعلم الكلمات الجديدة من خلال الألعاب والاختبارات التفاعلية."
-      },
-      {
-        "id": "donation",
-        "title": "تطبيق التبرع",
-        "description": "بيئة تبرع باستخدام Mollie لزوار De warmste week"
+    "brand": "معرض الأعمال",
+    "seo": {
+      "title": "مطوّر Full-Stack في بلجيكا",
+      "jobTitle": "مطوّر Full-Stack",
+      "description": "كريم مطر مطوّر Full-Stack في بلجيكا. يبني تطبيقات ويب بـ React و Next.js، ويعمل على الخادم بـ Laravel و PHP و Node.js. اطّلع على مشاريعه أو أرسل له رسالة."
+    },
+    "nav": {
+      "work": "الأعمال",
+      "about": "عنّي",
+      "stack": "الأدوات",
+      "contact": "تواصل",
+      "menu": "القائمة",
+      "close": "إغلاق",
+      "skipToContent": "تخطَّ إلى المحتوى"
+    },
+    "hero": {
+      "eyebrow": "مطوّر Full-Stack",
+      "headlineLead": "أبني",
+      "headlineAccessible": "تطبيقات الوب، والواجهات، وأنظمة التصميم، والميزات اللحظية، وواجهات API",
+      "roles": [
+        "تطبيقات ويب",
+        "واجهات",
+        "أنظمة تصميم",
+        "ميزات لحظية",
+        "واجهات API"
+      ],
+      "subtext": "تدرّبت كمطوّر Full-Stack، وأعمل بكل سرور على الجهتين. أنقل الفكرة من قاعدة البيانات حتى الواجهة، ويهمّني أداؤها بقدر ما يهمّني شكلها.",
+      "availability": "متاح لعمل جديد",
+      "ctaPrimary": "شاهد أعمالي",
+      "ctaSecondary": "تواصل معي",
+      "photoAlt": "Karim Matar",
+      "photoCaption": "Karim Matar، مطوّر Full-Stack",
+      "stats": [
+        "مشاريع سلّمتها",
+        "تقنية أستخدمها يوميًا",
+        "لغات أبني بها"
+      ]
+    },
+    "projects": {
+      "eyebrow": "01 — أعمال مختارة",
+      "title": "مشاريع أنجزتها",
+      "text": "كلها منشورة على الإنترنت، ويضم كل مشروع قاعدة البيانات وواجهة API والواجهة الأمامية والنشر. افتح أي مشروع لتجربته.",
+      "showcaseView": "بطاقات",
+      "indexView": "قائمة",
+      "visitLabel": "افتح الموقع",
+      "list": [
+        {
+          "id": "lexiplay",
+          "title": "LexiPlay",
+          "description": "تطبيق ويب يتعلّم فيه الأطفال المصابون بعسر القراءة كلمات جديدة عبر ألعاب واختبارات."
+        },
+        {
+          "id": "donation",
+          "title": "تطبيق التبرع",
+          "description": "صفحة تبرّع بمدفوعات Mollie، بُنيت لزوّار أسبوع De Warmste Week."
+        },
+        {
+          "id": "doodley",
+          "title": "Doodley",
+          "description": "لعبة رسم للأصدقاء أو العائلة: يرسم أحدهم، والآخرون يخمّنون، في الوقت الحقيقي."
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "02 — أعمل هكذا",
+      "title": "من قاعدة البيانات إلى الواجهة",
+      "body": [
+        "أعمل من البداية إلى النهاية: قاعدة البيانات، وواجهات API، ومنطق العمل، والواجهة الأمامية فوقها. وأحب الجهتين معًا. يسعدني أن أعمل داخل نموذج بيانات أو واجهة API كما يسعدني أن أعمل على تخطيط أو حالة فارغة أو خطأ يصادفه أحدهم في أسوأ لحظة.",
+        "أحب قواعد الشيفرة التي تبقى سهلة القراءة. مكوّنات كل منها مهمة واحدة، وأسماء تشرح نفسها دون تعليق، ومجموعة واحدة من قيم الألوان والمسافات بدل قيمة جديدة في كل مرة. الأداء وإمكانية الوصول جزء من النسخة الأولى، لا مرحلة تنظيف لاحقة.",
+        "خارج عمل العملاء أبني أشياء صغيرة لأبقي انتباهي على التفاصيل. وهذا الموقع هو المكان الذي أختبر فيه التخطيط والحركة ودعم تعدّد اللغات."
+      ],
+      "pullQuote": "أعمل على الجهتين، وأحبهما معًا."
+    },
+    "stack": {
+      "eyebrow": "03 — الأدوات",
+      "title": "ما أستخدمه",
+      "text": "هذه أكثر الأدوات التي ألجأ إليها. القائمة قصيرة عن قصد.",
+      "groups": {
+        "frontend": "الواجهة الأمامية",
+        "backend": "الخادم",
+        "tooling": "أدوات أخرى"
       }
-    ],
-      "skillsTitle": "المهارات",
-"skills": [
-  { "name": "PHP", "logoSrc": "/skills/php.svg" },
-  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
-  { "name": "HTML", "logoSrc": "/skills/html.svg" },
-  { "name": "CSS", "logoSrc": "/skills/css.svg" },
-  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
-  { "name": "React", "logoSrc": "/skills/react.svg" },
-  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" },
-  { "name": "Node.js", "logoSrc": "/skills/node.svg" },
-    { "name": "Arduino", "logoSrc": "/skills/arduino.svg" },
-  { "name": "Craft CMS", "logoSrc": "/skills/craft.svg" },
-  { "name": "Tailwind CSS", "logoSrc": "/skills/tailwindcss.svg" },
-    { "name": "Git", "logoSrc": "/skills/git.svg" }
-]
+    },
+    "contact": {
+      "eyebrow": "04 — تواصل",
+      "title": "تواصل معي",
+      "intro": "املأ النموذج فيصل إلى بريدي مباشرة، وأجيب على كل رسالة. إن كان لديك مشروع في بالك، فاكتب ما يجب أن يفعله ومتى يجب أن ينطلق.",
+      "nameLabel": "الاسم",
+      "emailLabel": "البريد الإلكتروني",
+      "messageLabel": "الرسالة",
+      "messageHint": "بضعة أسطر تكفي.",
+      "namePlaceholder": "اسمك",
+      "emailPlaceholder": "you@example.com",
+      "messagePlaceholder": "ما الذي تعمل عليه؟",
+      "required": "يرجى ملء هذا الحقل.",
+      "invalidEmail": "عنوان البريد الإلكتروني ناقص علامة @ أو النطاق.",
+      "button": "إرسال الرسالة",
+      "sending": "جارٍ الإرسال…",
+      "success": "وصلت الرسالة. شكرًا.",
+      "error": "لم تصل الرسالة. حاول مرة أخرى، أو أرسلها عبر أحد الحسابات المجاورة.",
+      "sendAnother": "إرسال رسالة أخرى",
+      "socialTitle": "في أماكن أخرى"
+    },
+    "footer": {
+      "backToTop": "العودة إلى الأعلى",
+      "rights": "جميع الحقوق محفوظة."
+    }
   }
 }

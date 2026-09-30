@@ -1,52 +1,111 @@
 {
   "Home": {
-        "brandLabel": "PORTFOLIO",
-    "tagline": "Webontwikkelaar",
-    "headline": "Karim Matar",
-    "subtext": "Ik ontwikkel responsieve, gebruiksvriendelijke webapplicaties die op elk apparaat een duidelijke, professionele ervaring bieden.",
-        "photoAlt": "Karim Matar",  
-    "projectsTitle": "Projecten",
-    "contactTitle": "Contact",
-    "contactIntro": "Heb je een project of wil je samenwerken? Stuur een bericht en ik neem contact met je op.",
-    "contactNameLabel": "Naam",
-    "contactEmailLabel": "E-mail",
-    "contactMessageLabel": "Bericht",
-    "contactButton": "Bericht versturen",
-    "contactSuccess": "Bericht succesvol verzonden.",
-    "contactError": "Er ging iets mis. Probeer het opnieuw.",
-    "aboutTitle": "Over mij",
-    "heroPrimaryCta": "Bekijk projecten",
-"heroSecondaryCta": "Neem contact op",
-"socialTitle": "Sociale platforms",
-    "projectsVisitLabel": "Project bezoeken",
-"aboutText": "Als junior full‑stack webontwikkelaar richt ik mij op het bouwen van gestructureerde, betrouwbare oplossingen met overzichtelijke front‑end layouts en een solide back‑end, steeds met een verzorgde gebruikerservaring als doel.",
-        "projects": [
-      {
-        "id": "lexiplay",
-        "title": "LexiPlay",
-        "description": "Een gamified web applicatie die kinderen met dyslexie helpt nieuwe woorden te leren via interactieve spellen en quizzen."
-      },
-      {
-        "id": "donation",
-        "title": "Donatieapp",
-        "description": "Een donatieomgeving met Mollie voor bezoekers van De warmste week."
+    "brand": "Portfolio",
+    "seo": {
+      "title": "Full-stack developer in België",
+      "jobTitle": "Full-stack developer",
+      "description": "Karim Matar is een full-stack developer in België. Hij bouwt webapps met React en Next.js en werkt aan de serverkant met Laravel, PHP en Node.js. Bekijk zijn projecten of stuur hem een bericht."
+    },
+    "nav": {
+      "work": "Werk",
+      "about": "Over mij",
+      "stack": "Stack",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Sluiten",
+      "skipToContent": "Naar de inhoud"
+    },
+    "hero": {
+      "eyebrow": "Full-stack developer",
+      "headlineLead": "Ik bouw",
+      "headlineAccessible": "webapps, interfaces, designsystemen, realtimefuncties en API's",
+      "roles": [
+        "web apps",
+        "interfaces",
+        "designsystemen",
+        "realtimefuncties",
+        "API's"
+      ],
+      "subtext": "Ik ben opgeleid als full-stack developer en werk graag aan beide kanten. Ik werk een feature uit van de database tot aan de interface, en het gedrag en de uitstraling zijn voor mij even belangrijk.",
+      "availability": "Beschikbaar voor nieuw werk",
+      "ctaPrimary": "Bekijk mijn werk",
+      "ctaSecondary": "Neem contact op",
+      "photoAlt": "Karim Matar",
+      "photoCaption": "Karim Matar, full-stack developer",
+      "stats": [
+        "projecten opgeleverd",
+        "technologieën die ik dagelijks gebruik",
+        "talen waarin ik bouw"
+      ]
+    },
+    "projects": {
+      "eyebrow": "01 — Geselecteerd werk",
+      "title": "Projecten die ik af heb",
+      "text": "Ze staan allemaal online, en elk project bevat de database, de API, de interface en de deployment. Open een project om het te proberen.",
+      "showcaseView": "Kaarten",
+      "indexView": "Lijst",
+      "visitLabel": "Open site",
+      "list": [
+        {
+          "id": "lexiplay",
+          "title": "LexiPlay",
+          "description": "Een webapp waar kinderen met dyslexie nieuwe woorden leren door spelletjes en quizjes te spelen."
+        },
+        {
+          "id": "donation",
+          "title": "Donatieapp",
+          "description": "Een donatiepagina met betalingen via Mollie, gebouwd voor bezoekers van De Warmste Week."
+        },
+        {
+          "id": "doodley",
+          "title": "Doodley",
+          "description": "Een teken spel voor vrienden of familie. Iemand tekent, de rest raadt, en dat realtime."
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "02 — Hoe ik werk",
+      "title": "Van database tot interface",
+      "body": [
+        "Ik werk van begin tot eind: database, API's, businesslogica en de interface erbovenop. Ik hou van beide kanten. Een datamodel of een API maken me net zo gelukkig als een layout, een lege state of een fout die iemand op het slechtste moment tegenkomt.",
+        "Ik houd van een codebase die goed leesbaar blijft. Componenten met één taak, namen die zonder commentaar al zeggen wat ze doen, en één set kleur- en afstandwaarden in plaats van elke keer een nieuwe. Performance en toegankelijkheid zitten in de eerste versie, niet in een opruimronde achteraf.",
+        "Buiten klantwerk om bouw ik kleine dingen om mijn oog scherp te houden. Deze site is waar ik layout, beweging en meertalige ondersteuning test."
+      ],
+      "pullQuote": "Ik werk aan beide kanten van de stack, en ik hou van beide."
+    },
+    "stack": {
+      "eyebrow": "03 — Toolkit",
+      "title": "Wat ik gebruik",
+      "text": "Dit zijn de tools waar ik het vaakst naar grijp. De lijst is bewust kort.",
+      "groups": {
+        "frontend": "Front-end",
+        "backend": "Back-end",
+        "tooling": "Tools"
       }
-    ],
-      "skillsTitle": "Skills",
-"skills": [
-  { "name": "PHP", "logoSrc": "/skills/php.svg" },
-  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
-  { "name": "HTML", "logoSrc": "/skills/html.svg" },
-  { "name": "CSS", "logoSrc": "/skills/css.svg" },
-  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
-  { "name": "React", "logoSrc": "/skills/react.svg" },
-  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" },
-  { "name": "Node.js", "logoSrc": "/skills/node.svg" },
-  { "name": "Arduino", "logoSrc": "/skills/arduino.svg" },
-  { "name": "Craft CMS", "logoSrc": "/skills/craft.svg" },
-  { "name": "Tailwind CSS", "logoSrc": "/skills/tailwindcss.svg" },
-      { "name": "Git", "logoSrc": "/skills/git.svg" }
-
-]
+    },
+    "contact": {
+      "eyebrow": "04 — Contact",
+      "title": "Neem contact op",
+      "intro": "Vul het formulier in en het komt in mijn inbox. Ik antwoord op elk bericht. Heb je een project in gedachten, vertel dan wat het moet doen en wanneer het live moet staan.",
+      "nameLabel": "Naam",
+      "emailLabel": "E-mail",
+      "messageLabel": "Bericht",
+      "messageHint": "Een paar regels is genoeg.",
+      "namePlaceholder": "Je naam",
+      "emailPlaceholder": "jij@voorbeeld.be",
+      "messagePlaceholder": "Waar werk je aan?",
+      "required": "Vul dit veld in.",
+      "invalidEmail": "Dit e-mailadres mist een @ of een domein.",
+      "button": "Bericht versturen",
+      "sending": "Versturen…",
+      "success": "Bericht verstuurd. Bedankt.",
+      "error": "Het bericht is niet aangekomen. Probeer het nog eens, of stuur het via een van de accounts rechts.",
+      "sendAnother": "Nog een bericht sturen",
+      "socialTitle": "Elders"
+    },
+    "footer": {
+      "backToTop": "Terug naar boven",
+      "rights": "Alle rechten voorbehouden."
+    }
   }
 }

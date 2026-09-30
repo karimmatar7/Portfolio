@@ -1,27 +1,226 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-instrument), "Times New Roman", Times, serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-arabic: var(--font-noto-arabic), "Segoe UI", Tahoma, sans-serif;
+
+  --color-paper: #f6f5f1;
+  --color-surface: #ffffff;
+  --color-ink: #1a1917;
+  --color-ink-soft: #56534c;
+  --color-ink-mute: #6b675c;
+  --color-rule: #e3e0d7;
+  --color-rule-soft: #edeae2;
+  --color-accent: #c6402d;
+  --color-accent-ink: #a5331f;
+  --color-accent-tint: #f7eae6;
+
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --text-hero: clamp(2.75rem, 9vw, 7.5rem);
+  --text-display: clamp(2rem, 5.5vw, 4rem);
+  --text-title: clamp(1.5rem, 3.2vw, 2.25rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" on, "cv01" on;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  [dir="rtl"] body {
+    font-family: var(--font-arabic);
+  }
+
+  [dir="rtl"] .font-display {
+    font-family: var(--font-arabic);
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (hover: hover) {
+    a,
+    button {
+      cursor: pointer;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility hairline {
+  border-color: var(--color-rule);
 }
 
+@utility meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .meta {
+  letter-spacing: 0.12em;
+}
+
+@utility balance {
+  text-wrap: balance;
+}
+
+@utility pretty {
+  text-wrap: pretty;
+}
+
+/* Paper grain — keeps large flat surfaces from looking dead.
+   Plain CSS, not @utility: nested pseudo-elements are dropped inside
+   @utility blocks in Tailwind v4. */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+}
+
+/* Cursor-tracked spotlight, driven by --mx / --my set in JS */
+@utility spotlight {
+  background-image: radial-gradient(
+    26rem circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in oklab, var(--color-accent) 9%, transparent),
+    transparent 65%
+  );
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-editorial);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+[dir="rtl"] .link-underline::after {
+  transform-origin: right;
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-pause:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@utility fade-edges {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+[dir="rtl"] .fade-edges {
+  mask-image: linear-gradient(
+    to left,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-accent) 45%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@utility pulse-dot {
+  animation: pulse-ring 2.6s var(--ease-editorial) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Quiet scrollbar so the page doesn't fight the editorial look */
+@supports (scrollbar-width: thin) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-rule) transparent;
+  }
+}

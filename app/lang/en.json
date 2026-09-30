@@ -1,53 +1,111 @@
 {
-      "Home": {
-    "brandLabel": "PORTFOLIO",
-  "tagline": "Web Developer",
-  "headline": "Karim Matar",
-  "subtext": "I create responsive, user‑friendly web applications that deliver clear, professional experiences across devices.",
-      "photoAlt": "Karim Matar", 
-  "projectsTitle": "Projects",
-  "contactTitle": "Contact",
-  "contactIntro": "Have a project or want to collaborate? Send a message and I’ll get back to you.",
-  "contactNameLabel": "Name",
-  "contactEmailLabel": "Email",
-  "contactMessageLabel": "Message",
-  "contactButton": "Send message",
-  "contactSuccess": "Message sent successfully.",
-  "contactError": "Something went wrong. Please try again.",
-  "heroPrimaryCta": "View projects",
-"heroSecondaryCta": "Contact me",
-    "projectsVisitLabel": "Visit project",
-    "socialTitle": "Social platforms",
-
-  "aboutTitle": "About",
-"aboutText": "As a junior full‑stack web developer, I focus on building structured, reliable solutions with clean front‑end layouts and solid back‑end logic, always aiming for a polished user experience.",
-  "projects": [
-      {
-        "id": "lexiplay",
-        "title": "LexiPlay",
-        "description": "A gamified web application that helps children with dyslexialearn new words through interactive games and quizzes."
-      },
-      {
-        "id": "donation",
-        "title": "Donation App",
-        "description": "A donation environment using Mollie for visitors of De warmste week."
+  "Home": {
+    "brand": "Portfolio",
+    "seo": {
+      "title": "Full-stack developer in Belgium",
+      "jobTitle": "Full-stack developer",
+      "description": "Karim Matar is a full-stack developer in Belgium. He builds web apps with React and Next.js, and works on the server side with Laravel, PHP and Node.js. Have a look at his projects or send him a message."
+    },
+    "nav": {
+      "work": "Work",
+      "about": "About",
+      "stack": "Stack",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Close",
+      "skipToContent": "Skip to content"
+    },
+    "hero": {
+      "eyebrow": "Full-stack developer",
+      "headlineLead": "I build",
+      "headlineAccessible": "web apps, interfaces, design systems, realtime features and APIs",
+      "roles": [
+        "web apps",
+        "interfaces",
+        "design systems",
+        "realtime features",
+        "APIs"
+      ],
+      "subtext": "I trained as a full-stack developer and I like working on both sides of it. I take a feature from the database up to the interface, and I care about how it works and how it looks in equal measure.",
+      "availability": "Open to new work",
+      "ctaPrimary": "View my work",
+      "ctaSecondary": "Contact me",
+      "photoAlt": "Karim Matar",
+      "photoCaption": "Karim Matar, full-stack developer",
+      "stats": [
+        "projects shipped",
+        "technologies I use daily",
+        "languages I build in"
+      ]
+    },
+    "projects": {
+      "eyebrow": "01 — Selected work",
+      "title": "Projects I finished",
+      "text": "Every one of them is online, and each covers the database, the API, the interface and the deployment. Open a project to try it.",
+      "showcaseView": "Cards",
+      "indexView": "List",
+      "visitLabel": "Visit site",
+      "list": [
+        {
+          "id": "lexiplay",
+          "title": "LexiPlay",
+          "description": "A web app where children with dyslexia learn new words by playing games and taking quizzes."
+        },
+        {
+          "id": "donation",
+          "title": "Donation app",
+          "description": "A donation page with Mollie payments, built for visitors of De Warmste Week."
+        },
+        {
+          "id": "doodley",
+          "title": "Doodley",
+          "description": "A drawing game for friends or family. Someone draws, everyone else guesses, in real time."
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "02 — How I work",
+      "title": "Database to interface",
+      "body": [
+        "I work end to end: database, APIs, business logic and the interface on top. I like both sides of that. I am as happy inside a data model or an API as I am on a layout, an empty state, or an error someone hits at the worst possible moment.",
+        "I like a codebase that stays easy to read. Components with one job, names that say what they do without a comment, and one set of colour and spacing values instead of a new one every time. Performance and accessibility go into the first version, not into a cleanup afterwards.",
+        "Outside client work I build small things to keep an eye on detail. This site is where I test layout, motion and multilingual support."
+      ],
+      "pullQuote": "I work on both sides of the stack, and I like both."
+    },
+    "stack": {
+      "eyebrow": "03 — Toolkit",
+      "title": "Tools I use",
+      "text": "These are the ones I reach for most. The list is short on purpose.",
+      "groups": {
+        "frontend": "Front-end",
+        "backend": "Back-end",
+        "tooling": "Tools"
       }
-    ],
-    "skillsTitle": "Skills",
-"skills": [
-  { "name": "PHP", "logoSrc": "/skills/php.svg" },
-  { "name": "JavaScript", "logoSrc": "/skills/javascript.svg" },
-  { "name": "HTML", "logoSrc": "/skills/html.svg" },
-  { "name": "CSS", "logoSrc": "/skills/css.svg" },
-  { "name": "Laravel", "logoSrc": "/skills/laravel.svg" },
-  { "name": "React", "logoSrc": "/skills/react.svg" },
-  { "name": "Next.js", "logoSrc": "/skills/nextjs.svg" },
-    { "name": "Node.js", "logoSrc": "/skills/node.svg" },
-      { "name": "Arduino", "logoSrc": "/skills/arduino.svg" },
-  { "name": "Craft CMS", "logoSrc": "/skills/craft.svg" },
-  { "name": "Tailwind CSS", "logoSrc": "/skills/tailwindcss.svg" },
-      { "name": "Git", "logoSrc": "/skills/git.svg" }
-
-]
-}
+    },
+    "contact": {
+      "eyebrow": "04 — Contact",
+      "title": "Get in touch",
+      "intro": "Fill in the form and it lands in my inbox. I answer every message. If you have a project in mind, tell me what it should do and when it has to be live.",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "messageHint": "A few lines is enough.",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@example.com",
+      "messagePlaceholder": "What are you working on?",
+      "required": "Please fill this in.",
+      "invalidEmail": "That email address is missing an @ or a domain.",
+      "button": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent. Thanks.",
+      "error": "The message did not go through. Try again, or send it to me on one of the accounts on the right.",
+      "sendAnother": "Send another message",
+      "socialTitle": "Elsewhere"
+    },
+    "footer": {
+      "backToTop": "Back to top",
+      "rights": "All rights reserved."
+    }
+  }
 }
