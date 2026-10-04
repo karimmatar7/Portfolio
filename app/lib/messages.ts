@@ -24,7 +24,6 @@ export type Messages = {
       contact: string;
       menu: string;
       close: string;
-      skipToContent: string;
     };
     hero: {
       eyebrow: string;
