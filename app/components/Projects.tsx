@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -10,18 +11,46 @@ import {
 } from "framer-motion";
 import { projectHost, projects, type Project } from "@/app/content/site";
 import { cx } from "@/app/lib/cx";
+import { EASE } from "@/app/lib/motion";
 import { useLocale } from "./LocaleProvider";
 import { ArrowUpRight, BrandIcon, GridIcon, ListIcon } from "./Icons";
 import { Reveal } from "./ui/Reveal";
 import { Rule, SectionHeading } from "./ui/SectionHeading";
 import { ProjectArtwork } from "./ui/ProjectArtwork";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
 const SPRING = { stiffness: 200, damping: 20, mass: 0.5 } as const;
 
-type Item = Project & { host: string };
+type Item = Project & { host: string; href: string; external: boolean };
 
 type View = "showcase" | "index";
+
+function Cover({ item }: { item: Item }) {
+  if (item.image) {
+    const isSvg = item.image.toLowerCase().endsWith(".svg");
+    return (
+      <>
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          unoptimized={isSvg}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className={cx(
+            "transition-transform duration-[900ms] ease-editorial group-hover:scale-[1.04]",
+            isSvg ? "p-6 object-contain" : "object-cover"
+          )}
+        />
+        {isSvg ? (
+          <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-tint via-surface to-paper" />
+        ) : (
+          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/5 to-transparent" />
+        )}
+      </>
+    );
+  }
+
+  return <ProjectArtwork seed={item.seed} index={item.index} title={item.title} />;
+}
 
 function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
   const { t } = useLocale();
@@ -74,7 +103,17 @@ function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
           featured ? "aspect-[16/10] lg:aspect-auto lg:w-[52%]" : "aspect-[16/10]"
         )}
       >
-        <ProjectArtwork seed={item.seed} index={item.index} title={item.title} />
+        {item.external ? (
+          <Cover item={item} />
+        ) : (
+          <a
+            href={item.href}
+            className="absolute inset-0 block"
+            aria-label={item.title}
+          >
+            <Cover item={item} />
+          </a>
+        )}
         <div className="pointer-events-none absolute inset-0 spotlight opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
 
@@ -99,9 +138,8 @@ function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
               </a>
             ) : null}
             <a
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
+              href={item.href}
+              {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
               className="group/visit inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink transition-colors hover:text-accent"
             >
               {t.projects.visitLabel}
@@ -149,9 +187,8 @@ function IndexRow({ item }: { item: Item }) {
 
         <div className="min-w-0">
           <a
-            href={item.link}
-            target="_blank"
-            rel="noreferrer"
+            href={item.href}
+            {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
             className="inline-block"
           >
             <h3 className="font-display text-3xl leading-tight text-ink transition-transform duration-500 ease-editorial group-hover:translate-x-2 rtl:group-hover:-translate-x-2 sm:text-4xl">
@@ -164,7 +201,7 @@ function IndexRow({ item }: { item: Item }) {
         </div>
 
         <div className="relative hidden h-24 w-full overflow-hidden border border-rule opacity-0 transition-all duration-500 ease-editorial group-hover:scale-100 group-hover:opacity-100 sm:block sm:scale-95">
-          <ProjectArtwork seed={item.seed} index={item.index} title={item.title} />
+          <Cover item={item} />
         </div>
 
         <span className="inline-flex items-center gap-3 text-ink-mute sm:justify-self-end">
@@ -180,9 +217,8 @@ function IndexRow({ item }: { item: Item }) {
             </a>
           ) : null}
           <a
-            href={item.link}
-            target="_blank"
-            rel="noreferrer"
+            href={item.href}
+            {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
             className="inline-flex items-center gap-2 text-ink-mute transition-colors hover:text-accent"
           >
             <span className="meta hidden max-w-[10rem] truncate md:inline">
@@ -198,18 +234,21 @@ function IndexRow({ item }: { item: Item }) {
 }
 
 export function Projects() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const reduce = useReducedMotion();
   const copy = t.projects;
   const [view, setView] = useState<View>("showcase");
 
   const items: Item[] = projects.map((project) => {
     const localized = copy.list.find((entry) => entry.id === project.id);
+    const external = !project.internal;
     return {
       ...project,
       title: localized?.title ?? project.title,
       description: localized?.description ?? project.description,
-      host: projectHost(project.link),
+      external,
+      href: external ? project.link : `/${locale}${project.link}`,
+      host: external ? projectHost(project.link) : copy.caseStudyHost,
     };
   });
 

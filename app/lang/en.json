@@ -12,7 +12,13 @@
       "stack": "Stack",
       "contact": "Contact",
       "menu": "Menu",
-      "close": "Close"
+      "close": "Close",
+      "theme": {
+        "label": "Theme",
+        "system": "System",
+        "light": "Light",
+        "dark": "Dark"
+      }
     },
     "hero": {
       "eyebrow": "Full-stack developer",
@@ -45,6 +51,7 @@
       "indexView": "List",
       "visitLabel": "Visit site",
       "repoLabel": "Repository",
+      "caseStudyHost": "Case study",
       "list": [
         {
           "id": "lexiplay",
@@ -65,6 +72,11 @@
           "id": "jobfalcon",
           "title": "JobFalcon",
           "description": "A private Telegram bot I built for my own job search. It hunts software engineering vacancies in the UK that offer visa sponsorship, verifies the sponsorship from each listing's own wording, and ranks the best matches for my profile."
+        },
+        {
+          "id": "enterin",
+          "title": "EnterIn",
+          "description": "A collection of movie-inspired experiences built in Unreal Engine 5 in a single month. Walk through a cinema where every door opens onto a different film. Awarded a prize by Artevelde University."
         }
       ]
     },
@@ -112,6 +124,130 @@
     },
     "footer": {
       "backToTop": "Back to top",
+      "rights": "All rights reserved."
+    }
+  },
+  "EnterIn": {
+    "meta": {
+      "title": "EnterIn — Unreal Engine 5 experiences",
+      "description": "EnterIn is a collection of movie-inspired experiences built in Unreal Engine 5 by Karim Matar in a single month in 2025. Walk through a cinema where each door opens onto a different film, including a horror experience inspired by Insidious. Awarded a prize by Artevelde University."
+    },
+    "back": "Back to portfolio",
+    "hero": {
+      "eyebrow": "Unreal Engine 5 · 2025",
+      "title": "EnterIn",
+      "lead": "A cinema you can walk through, where every door opens onto a different film.",
+      "statement": "I built EnterIn in a single month in 2025, with no game development experience at the time. It went on to win a prize from Artevelde University.",
+      "award": "Awarded a prize by Artevelde University · 2025",
+      "watch": "Watch the video",
+      "download": "Download",
+      "facts": ["Built solo", "One month", "First game ever"]
+    },
+    "showcase": {
+      "eyebrow": "01 — The game",
+      "title": "A cinema you can walk through",
+      "text": "EnterIn is a cinema. Every door leads to a different world, and each one is a short experience inspired by a film. The video below is the horror experience inspired by the movie Insidious.",
+      "videoCaption": "The Insidious experience — EnterIn"
+    },
+    "gallery": {
+      "eyebrow": "02 — Screens & worlds",
+      "title": "Inside every world",
+      "text": "Each environment is a short, self-contained experience. Open a frame to see it full size and read what you are looking at.",
+      "hint": "Select a frame to enlarge",
+      "viewLabel": "Open frame",
+      "close": "Close",
+      "next": "Next",
+      "prev": "Previous",
+      "chapters": [
+        {
+          "id": "house",
+          "title": "The cinema",
+          "text": "Where every visit begins: the main menu, and the hall the player walks into right after pressing start.",
+          "shots": [
+            {
+              "id": "main-menu",
+              "title": "Main menu",
+              "description": "The main menu, where the player chooses which door, and which experience, to enter."
+            },
+            {
+              "id": "hall",
+              "title": "The hall",
+              "description": "The hall the player first sees after pressing start, the entrance to every experience."
+            },
+            {
+              "id": "hall2",
+              "title": "Hall 2",
+              "description": "A second view of the hall."
+            }
+          ]
+        },
+        {
+          "id": "premise",
+          "title": "Before you enter",
+          "text": "Every door leads to a different film. Before a player steps in, the door shows a description of the movie behind it.",
+          "shots": [
+            {
+              "id": "premise",
+              "title": "The premise",
+              "description": "A photo of the description of the movie whose experience you are about to enter."
+            }
+          ]
+        },
+        {
+          "id": "fast",
+          "title": "Fast & Furious",
+          "text": "A high-speed experience inspired by the Fast & Furious films, rebuilt inside Unreal Engine.",
+          "shots": [
+            {
+              "id": "ff1",
+              "title": "Fast & Furious I",
+              "description": "Street-racing energy and neon light, captured in Unreal Engine."
+            },
+            {
+              "id": "ff2",
+              "title": "Fast & Furious II",
+              "description": "A second scene from the Fast & Furious experience."
+            },
+            {
+              "id": "ff3",
+              "title": "Fast & Furious III",
+              "description": "The final view from the Fast & Furious experience."
+            }
+          ]
+        },
+        {
+          "id": "dragon",
+          "title": "How to Train Your Dragon",
+          "text": "An experience inspired by How to Train Your Dragon, where the player takes to the sky.",
+          "shots": [
+            {
+              "id": "httyd1",
+              "title": "How to Train Your Dragon I",
+              "description": "Flying above the clouds on a dragon's back."
+            },
+            {
+              "id": "httyd2",
+              "title": "How to Train Your Dragon II",
+              "description": "A second scene from the dragon experience."
+            },
+            {
+              "id": "httyd3",
+              "title": "How to Train Your Dragon III",
+              "description": "The closing view of the dragon experience."
+            }
+          ]
+        }
+      ]
+    },
+    "download": {
+      "eyebrow": "03 — Download",
+      "title": "Download the game",
+      "text": "Download EnterIn and walk through every experience yourself.",
+      "button": "Download EnterIn",
+      "note": "Hosted on Google Drive"
+    },
+    "footer": {
+      "back": "Back to portfolio",
       "rights": "All rights reserved."
     }
   }

@@ -1,5 +1,3 @@
-"use client";
-
 import { skills } from "@/app/content/site";
 
 /**

@@ -11,12 +11,11 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { profile, projects, skills } from "@/app/content/site";
 import { locales } from "@/app/lib/messages";
+import { EASE } from "@/app/lib/motion";
 import { useLocale } from "./LocaleProvider";
 import { ArrowRight, ArrowUpRight } from "./Icons";
 import { MaskedText } from "./ui/Reveal";
 import { Magnetic } from "./ui/Magnetic";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 function RoleRotator() {
   const { t, axis } = useLocale();

@@ -1,27 +1,65 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --font-display: var(--font-instrument), "Times New Roman", Times, serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   --font-arabic: var(--font-noto-arabic), "Segoe UI", Tahoma, sans-serif;
 
-  --color-paper: #f6f5f1;
-  --color-surface: #ffffff;
-  --color-ink: #1a1917;
-  --color-ink-soft: #56534c;
-  --color-ink-mute: #6b675c;
-  --color-rule: #e3e0d7;
-  --color-rule-soft: #edeae2;
-  --color-accent: #c6402d;
-  --color-accent-ink: #a5331f;
-  --color-accent-tint: #f7eae6;
+  /* Semantic palette — every color resolves through the runtime tokens below,
+     so all utilities flip when the `.dark` class is applied by the theme
+     bootstrap script (runs before first paint, see app/layout.tsx). */
+  --color-paper: var(--c-paper);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-ink-mute: var(--c-ink-mute);
+  --color-rule: var(--c-rule);
+  --color-rule-soft: var(--c-rule-soft);
+  --color-accent: var(--c-accent);
+  --color-accent-ink: var(--c-accent-ink);
+  --color-accent-tint: var(--c-accent-tint);
+
+  /* Constant surfaces that stay the same in both themes — the theater panels
+     (EnterIn hero, lightbox, video frame) keep their dark "screening room"
+     look on light day, so solid-ink/paper don't flip like the semantic set. */
+  --color-solid-ink: #1a1917;
+  --color-solid-paper: #f6f5f1;
 
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
 
   --text-hero: clamp(2.75rem, 9vw, 7.5rem);
   --text-display: clamp(2rem, 5.5vw, 4rem);
-  --text-title: clamp(1.5rem, 3.2vw, 2.25rem);
+}
+
+:root {
+  color-scheme: light;
+  --c-paper: #f6f5f1;
+  --c-surface: #ffffff;
+  --c-ink: #1a1917;
+  --c-ink-soft: #56534c;
+  --c-ink-mute: #6b675c;
+  --c-rule: #e3e0d7;
+  --c-rule-soft: #edeae2;
+  --c-accent: #c6402d;
+  --c-accent-ink: #a5331f;
+  --c-accent-tint: #f7eae6;
+}
+
+.dark {
+  color-scheme: dark;
+  --c-paper: #16130f;
+  --c-surface: #201c16;
+  --c-ink: #f2eee4;
+  --c-ink-soft: #cfc8b8;
+  --c-ink-mute: #a29a87;
+  --c-rule: #38332a;
+  --c-rule-soft: #241f18;
+  --c-accent: #e4644a;
+  --c-accent-ink: #f08a72;
+  --c-accent-tint: #3b251f;
 }
 
 @layer base {
@@ -66,10 +104,6 @@
       cursor: pointer;
     }
   }
-}
-
-@utility hairline {
-  border-color: var(--color-rule);
 }
 
 @utility meta {

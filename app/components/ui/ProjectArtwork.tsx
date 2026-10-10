@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
+import { EASE } from "@/app/lib/motion";
 
 /**
  * Generative cover art for a project. Purely decorative — the composition is

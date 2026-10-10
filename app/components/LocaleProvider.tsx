@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/app/content/site";
 import { localeMeta, messages, type Messages } from "@/app/lib/messages";
 
@@ -24,11 +24,16 @@ export function LocaleProvider({
   locale: Locale;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
+  const [syncedLocale, setSyncedLocale] = useState<Locale>(initialLocale);
 
-  useEffect(() => {
+  // Adjust state during render when the URL locale changes (browser back/forward
+  // or a fresh navigation) instead of syncing it from an effect.
+  if (initialLocale !== syncedLocale) {
+    setSyncedLocale(initialLocale);
     setLocaleState(initialLocale);
-  }, [initialLocale]);
+  }
 
   useEffect(() => {
     const { dir } = localeMeta[locale];
@@ -38,16 +43,21 @@ export function LocaleProvider({
   }, [locale]);
 
   // Every language has its own URL, so switching navigates instead of swapping
-  // strings in place. Search engines get three separate pages to index.
+  // strings in place. Search engines get three separate pages to index. The
+  // current path is preserved (e.g. /en/projects/enterin -> /nl/projects/enterin)
+  // so switching language never drops the visitor back on the home page.
   const setLocale = useCallback(
     (next: Locale) => {
       setLocaleState(next);
       const { dir } = localeMeta[next];
       document.documentElement.lang = next;
       document.documentElement.dir = dir;
-      router.push(`/${next}`);
+
+      const segments = (pathname ?? "").split("/");
+      const rest = segments.slice(2).filter(Boolean).join("/");
+      router.push(`/${next}${rest ? `/${rest}` : ""}`);
     },
-    [router]
+    [router, pathname]
   );
 
   const value = useMemo<LocaleContextValue>(() => {

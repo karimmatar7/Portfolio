@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -9,9 +9,11 @@ import {
   useSpring,
 } from "framer-motion";
 import { cx } from "@/app/lib/cx";
+import { EASE } from "@/app/lib/motion";
 import { profile } from "@/app/content/site";
 import { localeMeta, locales, type Messages } from "@/app/lib/messages";
 import { useLocale } from "./LocaleProvider";
+import { ThemeSwitch } from "./ThemeSwitch";
 import { ArrowUpRight, CloseIcon, MenuIcon } from "./Icons";
 
 type NavCopy = Messages["Home"]["nav"];
@@ -60,7 +62,7 @@ function useActiveSection() {
   return active;
 }
 
-function LocaleSwitch({ compact = false }: { compact?: boolean }) {
+export function LocaleSwitch({ compact = false }: { compact?: boolean }) {
   const { locale, setLocale } = useLocale();
 
   return (
@@ -105,6 +107,18 @@ export function Nav({ copy }: { copy: NavCopy }) {
   const active = useActiveSection();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const prevMenuOpen = useRef(menuOpen);
+
+  useEffect(() => {
+    if (menuOpen && !prevMenuOpen.current) {
+      closeRef.current?.focus();
+    } else if (!menuOpen && prevMenuOpen.current) {
+      triggerRef.current?.focus();
+    }
+    prevMenuOpen.current = menuOpen;
+  }, [menuOpen]);
 
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
@@ -149,7 +163,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
         className="fixed inset-x-0 top-0 z-50"
         initial={reduce ? false : { y: -80 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        transition={{ duration: 0.7, ease: EASE, delay: 0.15 }}
       >
         <div
           className={cx(
@@ -202,6 +216,9 @@ export function Nav({ copy }: { copy: NavCopy }) {
               <div className="hidden sm:block">
                 <LocaleSwitch />
               </div>
+              <div className="hidden lg:block">
+                <ThemeSwitch />
+              </div>
               <a
                 href="#contact"
                 className="hidden items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[0.8125rem] font-medium text-paper transition-colors duration-300 hover:bg-accent md:inline-flex"
@@ -211,9 +228,11 @@ export function Nav({ copy }: { copy: NavCopy }) {
               </a>
               <button
                 type="button"
+                ref={triggerRef}
                 onClick={() => setMenuOpen(true)}
                 aria-label={copy.menu}
                 aria-expanded={menuOpen}
+                aria-controls="mobile-menu"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rule text-ink transition-colors hover:border-ink md:hidden"
               >
                 <MenuIcon />
@@ -233,6 +252,10 @@ export function Nav({ copy }: { copy: NavCopy }) {
         {menuOpen ? (
           <motion.div
             key="menu"
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label={copy.menu}
             className="fixed inset-0 z-[60] flex flex-col bg-paper"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -243,6 +266,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
               <span className="meta text-ink-mute">{t.brand}</span>
               <button
                 type="button"
+                ref={closeRef}
                 onClick={() => setMenuOpen(false)}
                 aria-label={copy.close}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rule text-ink"
@@ -266,7 +290,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
                   transition={{
                     duration: 0.5,
                     delay: 0.08 + i * 0.06,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: EASE,
                   }}
                 >
                   <span className="meta text-accent">
@@ -277,8 +301,11 @@ export function Nav({ copy }: { copy: NavCopy }) {
               ))}
             </nav>
 
-            <div className="flex items-center justify-between gap-4 px-5 py-6 sm:px-8">
-              <LocaleSwitch compact />
+            <div className="flex flex-wrap items-center justify-between gap-4 px-5 py-6 sm:px-8">
+              <div className="flex items-center gap-3">
+                <LocaleSwitch compact />
+                <ThemeSwitch compact />
+              </div>
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}

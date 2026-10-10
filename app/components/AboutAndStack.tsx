@@ -3,11 +3,10 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { skills } from "@/app/content/site";
+import { EASE } from "@/app/lib/motion";
 import { useLocale } from "./LocaleProvider";
 import { Reveal } from "./ui/Reveal";
 import { Rule, SectionHeading } from "./ui/SectionHeading";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 const GROUPS = ["frontend", "backend", "tooling", "game", "design"] as const;
 

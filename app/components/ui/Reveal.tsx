@@ -2,8 +2,7 @@
 
 import { Fragment } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
+import { EASE } from "@/app/lib/motion";
 
 type RevealProps = {
   children: React.ReactNode;

@@ -145,6 +145,10 @@ export type Project = {
   link: string;
   repo?: string;
   seed: number;
+  /** Real cover screenshot. Falls back to the generative artwork when missing. */
+  image?: string;
+  /** In-site case study: `link` is a path relative to the locale root. */
+  internal?: boolean;
 };
 
 export const projects: Project[] = [
@@ -185,7 +189,76 @@ export const projects: Project[] = [
     repo: "https://github.com/karimmatar7/job-falcon",
     seed: 13,
   },
+  {
+    id: "enterin",
+    index: "05",
+    title: "EnterIn",
+    description:
+      "A collection of movie-inspired experiences built in Unreal Engine 5 in a single month. Walk through a cinema where every door opens onto a different film.",
+    link: "/projects/enterin",
+    image: "/UE5/unreal-logo.svg",
+    internal: true,
+    seed: 5,
+  },
 ];
+
+/**
+ * EnterIn case study media. Chapters and shots are matched to their
+ * translations by `id`, so the order here and in the locale files can be
+ * edited independently.
+ */
+export type EnterInShot = {
+  id: string;
+  src: string;
+};
+
+export type EnterInChapter = {
+  id: string;
+  shots: EnterInShot[];
+};
+
+export const enterIn = {
+  year: "2025",
+  /** Official Unreal Engine logo, shown as the case study cover. */
+  heroImage: "/UE5/unreal-logo.svg",
+  /** Raster shot used for social share cards and JSON-LD. */
+  ogImage: "/UE5/Main%20menu.png",
+  videoSrc: "/UE5/Insidious.mp4",
+  /** Theatrical poster of the movie the horror experience is inspired by. */
+  videoPoster: "https://upload.wikimedia.org/wikipedia/en/2/2d/Insidious_poster.jpg",
+  downloadUrl:
+    "https://drive.google.com/file/d/1LY-kI4NJE__qhHYdTcQXzwkoxsNMErSV/view?usp=sharing",
+  chapters: [
+    {
+      id: "house",
+      shots: [
+        { id: "main-menu", src: "/UE5/Main%20menu.png" },
+        { id: "hall", src: "/UE5/hall.png" },
+        { id: "hall2", src: "/UE5/hall2.png" },
+      ],
+    },
+    {
+      id: "premise",
+      shots: [{ id: "premise", src: "/UE5/Experience%20description.png" }],
+    },
+    {
+      id: "fast",
+      shots: [
+        { id: "ff1", src: "/UE5/ff1.png" },
+        { id: "ff2", src: "/UE5/ff2.png" },
+        { id: "ff3", src: "/UE5/ff3.png" },
+      ],
+    },
+    {
+      id: "dragon",
+      shots: [
+        { id: "httyd1", src: "/UE5/httyd.png" },
+        { id: "httyd2", src: "/UE5/httyd2.png" },
+        { id: "httyd3", src: "/UE5/httyd3.png" },
+      ],
+    },
+  ] as EnterInChapter[],
+};
 
 export function projectHost(link: string) {
   try {

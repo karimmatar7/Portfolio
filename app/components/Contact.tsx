@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { profile } from "@/app/content/site";
 import { cx } from "@/app/lib/cx";
+import { EASE } from "@/app/lib/motion";
 import { useLocale } from "./LocaleProvider";
 import { ArrowRight, ArrowUpRight, BrandIcon, CheckIcon, type BrandIcon as BrandIconName } from "./Icons";
 import { Reveal } from "./ui/Reveal";
@@ -15,8 +16,6 @@ type Status = "idle" | "loading" | "success" | "error";
 type FieldId = "name" | "email" | "message";
 
 type Errors = Partial<Record<FieldId, string>>;
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 

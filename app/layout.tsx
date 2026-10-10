@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono, Instrument_Serif, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/app/components/ThemeProvider";
+import { THEME_COLORS } from "@/app/lib/theme";
 import { siteUrl } from "@/app/content/site";
 
 const geistSans = Geist({
@@ -62,8 +64,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f5f1",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f5f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#16130f" },
+  ],
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({
@@ -84,7 +89,15 @@ export default function RootLayout({
         <Script id="locale-bootstrap" strategy="beforeInteractive">
           {`try{var m=location.pathname.match(/^\\/(en|nl|ar)/);var l=m?m[1]:"en";var r=document.documentElement;r.lang=l;r.dir=l==="ar"?"rtl":"ltr"}catch(e){}`}
         </Script>
-        {children}
+        {/* Apply the saved theme before first paint so nothing flashes.
+            Uses a plain inline <script> (not next/script) to run synchronously
+            in the body while parsing. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var k='theme';var s;(function(){try{s=localStorage.getItem(k)}catch(e){}})();var m=s==='light'||s==='dark'?s:'system';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;r.classList.toggle('dark',d);r.style.colorScheme=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.setAttribute('content',d?'${THEME_COLORS.dark}':'${THEME_COLORS.light}')}catch(e){}`,
+          }}
+        />
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

@@ -12,7 +12,13 @@
       "stack": "الأدوات",
       "contact": "تواصل",
       "menu": "القائمة",
-      "close": "إغلاق"    
+      "close": "إغلاق",
+      "theme": {
+        "label": "المظهر",
+        "system": "الوضع التلقائي",
+        "light": "فاتح",
+        "dark": "داكن"
+      }
     },
     "hero": {
       "eyebrow": "مطوّر Full-Stack",
@@ -45,6 +51,7 @@
       "indexView": "قائمة",
       "visitLabel": "افتح الموقع",
       "repoLabel": "المستودع",
+      "caseStudyHost": "صفحة المشروع",
       "list": [
         {
           "id": "lexiplay",
@@ -65,6 +72,11 @@
           "id": "jobfalcon",
           "title": "JobFalcon",
           "description": "بوت تيليجرام خاص بنيته لبحثي الشخصي عن عمل. يبحث عن وظائف هندسة البرمجيات في المملكة المتحدة التي تقدّم كفالة التأشيرة، ويتحقّق من الكفالة من نص كل إعلان، ثم يرتّب أفضل النتائج المناسبة لملفي الشخصي."
+        },
+        {
+          "id": "enterin",
+          "title": "EnterIn",
+          "description": "مجموعة تجارب مستوحاة من أفلام، بُنيت في Unreal Engine 5 خلال شهر واحد. تجوّل في سينما يقود كل باب فيها إلى فيلم مختلف. حازت على جائزة من جامعة Artevelde."
         }
       ]
     },
@@ -112,6 +124,130 @@
     },
     "footer": {
       "backToTop": "العودة إلى الأعلى",
+      "rights": "جميع الحقوق محفوظة."
+    }
+  },
+  "EnterIn": {
+    "meta": {
+      "title": "EnterIn — تجارب Unreal Engine 5",
+      "description": "EnterIn مجموعة تجارب مستوحاة من أفلام، بُنيت بمحرّك Unreal Engine 5 على يد كريم مطر خلال شهر واحد في 2025. تجوّل في سينما يقود كل باب فيها إلى فيلم مختلف، من بينها تجربة رعب مستوحاة من Insidious. حاز المشروع على جائزة من جامعة Artevelde."
+    },
+    "back": "العودة إلى المعرض",
+    "hero": {
+      "eyebrow": "Unreal Engine 5 · 2025",
+      "title": "EnterIn",
+      "lead": "سينما يمكنك التجوّل فيها، حيث يقود كل باب إلى فيلم مختلف.",
+      "statement": "بنيت EnterIn خلال شهر واحد في 2025، دون أي خبرة سابقة في تطوير الألعاب. وحاز المشروع على جائزة من جامعة Artevelde.",
+      "award": "حاز على جائزة من جامعة Artevelde · 2025",
+      "watch": "شاهد الفيديو",
+      "download": "تحميل",
+      "facts": ["بنيتُه منفردًا", "شهر واحد", "أول لعبة لي"]
+    },
+    "showcase": {
+      "eyebrow": "01 — اللعبة",
+      "title": "سينما يمكنك التجوّل فيها",
+      "text": "EnterIn سينما. كل باب يقود إلى عالم مختلف، وكل عالم تجربة قصيرة مستوحاة من فيلم. الفيديو أدناه هو تجربة الرعب المستوحاة من فيلم Insidious.",
+      "videoCaption": "تجربة Insidious — EnterIn"
+    },
+    "gallery": {
+      "eyebrow": "02 — لقطات وعوالم",
+      "title": "داخل كل عالم",
+      "text": "كل بيئة تجربة قصيرة قائمة بذاتها. افتح أي إطار لتشاهده بالحجم الكامل وتقرأ ما الذي تنظر إليه.",
+      "hint": "اختر إطارًا لتكبيره",
+      "viewLabel": "افتح الإطار",
+      "close": "إغلاق",
+      "next": "التالي",
+      "prev": "السابق",
+      "chapters": [
+        {
+          "id": "house",
+          "title": "السينما",
+          "text": "حيث تبدأ كل زيارة: القائمة الرئيسية، ثم القاعة التي يدخلها اللاعب مباشرة بعد الضغط على البدء.",
+          "shots": [
+            {
+              "id": "main-menu",
+              "title": "القائمة الرئيسية",
+              "description": "القائمة الرئيسية، حيث يختار اللاعب أيّ باب — وأي تجربة — سيدخل."
+            },
+            {
+              "id": "hall",
+              "title": "القاعة",
+              "description": "القاعة التي يراها اللاعب أول مرة بعد الضغط على البدء، مدخل كل تجربة."
+            },
+            {
+              "id": "hall2",
+              "title": "القاعة 2",
+              "description": "نظرة ثانية إلى القاعة."
+            }
+          ]
+        },
+        {
+          "id": "premise",
+          "title": "قبل أن تدخل",
+          "text": "كل باب يقود إلى فيلم مختلف. قبل أن يدخل اللاعب، يعرض الباب وصف الفيلم الذي خلفه.",
+          "shots": [
+            {
+              "id": "premise",
+              "title": "الفكرة",
+              "description": "صورة لوصف الفيلم الذي أنت على وشك دخول تجربته."
+            }
+          ]
+        },
+        {
+          "id": "fast",
+          "title": "Fast & Furious",
+          "text": "تجربة سريعة مستوحاة من أفلام Fast & Furious، أُعيد بناؤها في Unreal Engine.",
+          "shots": [
+            {
+              "id": "ff1",
+              "title": "Fast & Furious I",
+              "description": "طاقة سباقات الشوارع والأضواء النيون داخل Unreal Engine."
+            },
+            {
+              "id": "ff2",
+              "title": "Fast & Furious II",
+              "description": "مشهد ثانٍ من تجربة Fast & Furious."
+            },
+            {
+              "id": "ff3",
+              "title": "Fast & Furious III",
+              "description": "المشهد الأخير من تجربة Fast & Furious."
+            }
+          ]
+        },
+        {
+          "id": "dragon",
+          "title": "How to Train Your Dragon",
+          "text": "تجربة مستوحاة من How to Train Your Dragon، حيث يحلّق اللاعب في السماء.",
+          "shots": [
+            {
+              "id": "httyd1",
+              "title": "How to Train Your Dragon I",
+              "description": "التحليق فوق السحاب على ظهر تنّين."
+            },
+            {
+              "id": "httyd2",
+              "title": "How to Train Your Dragon II",
+              "description": "مشهد ثانٍ من تجربة التنّين."
+            },
+            {
+              "id": "httyd3",
+              "title": "How to Train Your Dragon III",
+              "description": "المشهد الختامي من تجربة التنّين."
+            }
+          ]
+        }
+      ]
+    },
+    "download": {
+      "eyebrow": "03 — تحميل",
+      "title": "حمّل اللعبة",
+      "text": "حمّل EnterIn وتجوّل في كل تجربة بنفسك.",
+      "button": "تحميل EnterIn",
+      "note": "مستضاف على Google Drive"
+    },
+    "footer": {
+      "back": "العودة إلى المعرض",
       "rights": "جميع الحقوق محفوظة."
     }
   }

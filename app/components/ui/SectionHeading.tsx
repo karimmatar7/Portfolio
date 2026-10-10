@@ -1,9 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { EASE } from "@/app/lib/motion";
 import { MaskedText, Reveal } from "./Reveal";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 /** Hairline rule that draws itself in when scrolled into view. */
 export function Rule({ className = "" }: { className?: string }) {
@@ -28,10 +27,12 @@ export function Rule({ className = "" }: { className?: string }) {
 export function SectionHeading({
   eyebrow,
   title,
+  as: Heading = "h2",
   className = "",
 }: {
   eyebrow: string;
   title: string;
+  as?: "h2" | "h3";
   className?: string;
 }) {
   const [index, ...rest] = eyebrow.split(/\s+—\s+/);
@@ -55,11 +56,9 @@ export function SectionHeading({
           ) : null}
         </div>
       </Reveal>
-      <MaskedText
-        text={title}
-        className="font-display text-display leading-[1.05] balance text-ink"
-        stagger={0.04}
-      />
+      <Heading className="font-display text-display leading-[1.05] balance text-ink">
+        <MaskedText text={title} stagger={0.04} />
+      </Heading>
     </div>
   );
 }

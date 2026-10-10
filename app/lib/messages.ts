@@ -9,6 +9,65 @@ export type ProjectCopy = {
   description: string;
 };
 
+export type EnterInShotCopy = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type EnterInChapterCopy = {
+  id: string;
+  title: string;
+  text: string;
+  shots: EnterInShotCopy[];
+};
+
+export type EnterInMessages = {
+  meta: {
+    title: string;
+    description: string;
+  };
+  back: string;
+  hero: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    statement: string;
+    award: string;
+    watch: string;
+    download: string;
+    facts: string[];
+  };
+  showcase: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    videoCaption: string;
+  };
+  gallery: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    hint: string;
+    viewLabel: string;
+    close: string;
+    next: string;
+    prev: string;
+    chapters: EnterInChapterCopy[];
+  };
+  download: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    button: string;
+    note: string;
+  };
+  footer: {
+    back: string;
+    rights: string;
+  };
+};
+
 export type Messages = {
   Home: {
     brand: string;
@@ -24,6 +83,12 @@ export type Messages = {
       contact: string;
       menu: string;
       close: string;
+      theme: {
+        label: string;
+        system: string;
+        light: string;
+        dark: string;
+      };
     };
     hero: {
       eyebrow: string;
@@ -46,6 +111,7 @@ export type Messages = {
       indexView: string;
       visitLabel: string;
       repoLabel: string;
+      caseStudyHost: string;
       list: ProjectCopy[];
     };
     about: {
@@ -85,6 +151,7 @@ export type Messages = {
       rights: string;
     };
   };
+  EnterIn: EnterInMessages;
 };
 
 export const locales: Locale[] = ["en", "nl", "ar"];
@@ -96,5 +163,3 @@ export const localeMeta: Record<Locale, { label: string; dir: "ltr" | "rtl" }> =
 };
 
 export const messages: Record<Locale, Messages> = { en, nl, ar };
-
-export const defaultLocale: Locale = "en";

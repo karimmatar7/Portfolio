@@ -12,7 +12,13 @@
       "stack": "Stack",
       "contact": "Contact",
       "menu": "Menu",
-      "close": "Sluiten"
+      "close": "Sluiten",
+      "theme": {
+        "label": "Thema",
+        "system": "Systeem",
+        "light": "Licht",
+        "dark": "Donker"
+      }
     },
     "hero": {
       "eyebrow": "Full-stack developer",
@@ -45,6 +51,7 @@
       "indexView": "Lijst",
       "visitLabel": "Open site",
       "repoLabel": "Repository",
+      "caseStudyHost": "Projectpagina",
       "list": [
         {
           "id": "lexiplay",
@@ -65,6 +72,11 @@
           "id": "jobfalcon",
           "title": "JobFalcon",
           "description": "Een privé-Telegrambot die ik heb gebouwd voor mijn eigen zoektocht naar werk. Hij vindt softwareontwikkelaarsvacatures in het Verenigd Koninkrijk die visumsponsoring aanbieden, verifieert de sponsoring op basis van de tekst van elke vacature en rangschikt de beste matches voor mijn profiel."
+        },
+        {
+          "id": "enterin",
+          "title": "EnterIn",
+          "description": "Een verzameling door films geïnspireerde ervaringen, gebouwd in Unreal Engine 5 in één maand. Doorloop een bioscoop waarin elke deur naar een andere film leidt. Bekroond met een prijs van Arteveldehogeschool."
         }
       ]
     },
@@ -112,6 +124,130 @@
     },
     "footer": {
       "backToTop": "Terug naar boven",
+      "rights": "Alle rechten voorbehouden."
+    }
+  },
+  "EnterIn": {
+    "meta": {
+      "title": "EnterIn — Unreal Engine 5-ervaringen",
+      "description": "EnterIn is een verzameling door films geïnspireerde ervaringen, gebouwd in Unreal Engine 5 door Karim Matar in één maand in 2025. Doorloop een bioscoop waarin elke deur naar een andere film leidt, met onder meer een horrorervaring geïnspireerd op Insidious. Bekroond met een prijs van Arteveldehogeschool."
+    },
+    "back": "Terug naar portfolio",
+    "hero": {
+      "eyebrow": "Unreal Engine 5 · 2025",
+      "title": "EnterIn",
+      "lead": "Een bioscoop die je kunt doorlopen, waar elke deur naar een andere film leidt.",
+      "statement": "Ik bouwde EnterIn in één maand in 2025, zonder enige ervaring met game-ontwikkeling op dat moment. Het project won daarna een prijs van Arteveldehogeschool.",
+      "award": "Bekroond met een prijs van Arteveldehogeschool · 2025",
+      "watch": "Bekijk de video",
+      "download": "Download",
+      "facts": ["Alleen gebouwd", "Eén maand", "Mijn eerste game"]
+    },
+    "showcase": {
+      "eyebrow": "01 — De game",
+      "title": "Een bioscoop die je kunt doorlopen",
+      "text": "EnterIn is een bioscoop. Elke deur leidt naar een andere wereld, en elke wereld is een korte ervaring geïnspireerd op een film. De video hieronder is de horrorervaring geïnspireerd op de film Insidious.",
+      "videoCaption": "De Insidious-ervaring — EnterIn"
+    },
+    "gallery": {
+      "eyebrow": "02 — Beelden & werelden",
+      "title": "In elke wereld",
+      "text": "Elke omgeving is een korte, op zichzelf staande ervaring. Open een kader om het op ware grootte te zien en te lezen wat je bekijkt.",
+      "hint": "Kies een kader om te vergroten",
+      "viewLabel": "Open kader",
+      "close": "Sluiten",
+      "next": "Volgende",
+      "prev": "Vorige",
+      "chapters": [
+        {
+          "id": "house",
+          "title": "De bioscoop",
+          "text": "Waar elk bezoek begint: het hoofdmenu, en de gang waar de speler meteen na het drukken op start binnenstapt.",
+          "shots": [
+            {
+              "id": "main-menu",
+              "title": "Hoofdmenu",
+              "description": "Het hoofdmenu waar de speler kiest door welke deur, en welke ervaring, hij binnengaat."
+            },
+            {
+              "id": "hall",
+              "title": "De gang",
+              "description": "De gang die de speler als eerste ziet na het drukken op start, de ingang van elke ervaring."
+            },
+            {
+              "id": "hall2",
+              "title": "Gang 2",
+              "description": "Een tweede blik op de gang."
+            }
+          ]
+        },
+        {
+          "id": "premise",
+          "title": "Voor je binnenstapt",
+          "text": "Elke deur leidt naar een andere film. Voor een speler binnengaat, toont de deur een beschrijving van de film erachter.",
+          "shots": [
+            {
+              "id": "premise",
+              "title": "Het uitgangspunt",
+              "description": "Een foto van de beschrijving van de film waarvan je de ervaring op het punt staat binnen te gaan."
+            }
+          ]
+        },
+        {
+          "id": "fast",
+          "title": "Fast & Furious",
+          "text": "Een snelle ervaring geïnspireerd op de Fast & Furious-films, herbouwd in Unreal Engine.",
+          "shots": [
+            {
+              "id": "ff1",
+              "title": "Fast & Furious I",
+              "description": "De energie van straatraces en neonlicht, vastgelegd in Unreal Engine."
+            },
+            {
+              "id": "ff2",
+              "title": "Fast & Furious II",
+              "description": "Een tweede scène uit de Fast & Furious-ervaring."
+            },
+            {
+              "id": "ff3",
+              "title": "Fast & Furious III",
+              "description": "Het slotbeeld van de Fast & Furious-ervaring."
+            }
+          ]
+        },
+        {
+          "id": "dragon",
+          "title": "How to Train Your Dragon",
+          "text": "Een ervaring geïnspireerd op How to Train Your Dragon, waarin de speler de lucht in gaat.",
+          "shots": [
+            {
+              "id": "httyd1",
+              "title": "How to Train Your Dragon I",
+              "description": "Vliegen boven de wolken op de rug van een draak."
+            },
+            {
+              "id": "httyd2",
+              "title": "How to Train Your Dragon II",
+              "description": "Een tweede scène uit de drakenervaring."
+            },
+            {
+              "id": "httyd3",
+              "title": "How to Train Your Dragon III",
+              "description": "Het slotbeeld van de drakenervaring."
+            }
+          ]
+        }
+      ]
+    },
+    "download": {
+      "eyebrow": "03 — Download",
+      "title": "Download de game",
+      "text": "Download EnterIn en doorloop elke ervaring zelf.",
+      "button": "Download EnterIn",
+      "note": "Gehost op Google Drive"
+    },
+    "footer": {
+      "back": "Terug naar portfolio",
       "rights": "Alle rechten voorbehouden."
     }
   }
