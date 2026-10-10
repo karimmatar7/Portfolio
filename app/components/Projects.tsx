@@ -11,7 +11,7 @@ import {
 import { projectHost, projects, type Project } from "@/app/content/site";
 import { cx } from "@/app/lib/cx";
 import { useLocale } from "./LocaleProvider";
-import { ArrowUpRight, GridIcon, ListIcon } from "./Icons";
+import { ArrowUpRight, BrandIcon, GridIcon, ListIcon } from "./Icons";
 import { Reveal } from "./ui/Reveal";
 import { Rule, SectionHeading } from "./ui/SectionHeading";
 import { ProjectArtwork } from "./ui/ProjectArtwork";
@@ -86,15 +86,28 @@ function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
       >
         <div className="flex items-start justify-between gap-4">
           <span className="meta text-ink-mute">{item.index}</span>
-          <a
-            href={item.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group/visit inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink transition-colors hover:text-accent"
-          >
-            {t.projects.visitLabel}
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/visit:translate-x-0.5 group-hover/visit:-translate-y-0.5" />
-          </a>
+          <div className="flex items-center gap-4">
+            {item.repo ? (
+              <a
+                href={item.repo}
+                target="_blank"
+                rel="noreferrer"
+                className="group/repo inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink-mute transition-colors hover:text-ink"
+              >
+                <BrandIcon name="github" className="h-4 w-4" />
+                {t.projects.repoLabel}
+              </a>
+            ) : null}
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group/visit inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink transition-colors hover:text-accent"
+            >
+              {t.projects.visitLabel}
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/visit:translate-x-0.5 group-hover/visit:-translate-y-0.5" />
+            </a>
+          </div>
         </div>
 
         <h3
@@ -129,20 +142,22 @@ function IndexRow({ item }: { item: Item }) {
 
   return (
     <li className="border-t border-rule">
-      <a
-        href={item.link}
-        target="_blank"
-        rel="noreferrer"
-        className="group grid items-center gap-x-6 gap-y-3 py-7 sm:grid-cols-[2.5rem_minmax(0,1fr)_11rem_auto]"
-      >
+      <div className="group grid items-center gap-x-6 gap-y-3 py-7 sm:grid-cols-[2.5rem_minmax(0,1fr)_11rem_auto]">
         <span className="meta text-ink-mute transition-colors duration-300 group-hover:text-accent">
           {item.index}
         </span>
 
         <div className="min-w-0">
-          <h3 className="font-display text-3xl leading-tight text-ink transition-transform duration-500 ease-editorial group-hover:translate-x-2 rtl:group-hover:-translate-x-2 sm:text-4xl">
-            {item.title}
-          </h3>
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block"
+          >
+            <h3 className="font-display text-3xl leading-tight text-ink transition-transform duration-500 ease-editorial group-hover:translate-x-2 rtl:group-hover:-translate-x-2 sm:text-4xl">
+              {item.title}
+            </h3>
+          </a>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-soft">
             {item.description}
           </p>
@@ -152,14 +167,32 @@ function IndexRow({ item }: { item: Item }) {
           <ProjectArtwork seed={item.seed} index={item.index} title={item.title} />
         </div>
 
-        <span className="inline-flex items-center gap-2 text-ink-mute sm:justify-self-end">
-          <span className="meta hidden max-w-[10rem] truncate md:inline">
-            {item.host}
-          </span>
-          <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          <span className="sr-only">{t.projects.visitLabel}</span>
+        <span className="inline-flex items-center gap-3 text-ink-mute sm:justify-self-end">
+          {item.repo ? (
+            <a
+              href={item.repo}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={t.projects.repoLabel}
+              className="inline-flex items-center text-ink-mute transition-colors hover:text-ink"
+            >
+              <BrandIcon name="github" className="h-4 w-4" />
+            </a>
+          ) : null}
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-ink-mute transition-colors hover:text-accent"
+          >
+            <span className="meta hidden max-w-[10rem] truncate md:inline">
+              {item.host}
+            </span>
+            <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span className="sr-only">{t.projects.visitLabel}</span>
+          </a>
         </span>
-      </a>
+      </div>
     </li>
   );
 }
@@ -253,9 +286,15 @@ export function Projects() {
                 <div className="lg:col-span-2">
                   <ShowcaseCard item={featured} featured />
                 </div>
-                {rest.map((item) => (
-                  <ShowcaseCard key={item.id} item={item} featured={false} />
-                ))}
+                {rest.map((item, index) =>
+                  rest.length % 2 === 1 && index === rest.length - 1 ? (
+                    <div className="lg:col-span-2" key={item.id}>
+                      <ShowcaseCard item={item} featured />
+                    </div>
+                  ) : (
+                    <ShowcaseCard key={item.id} item={item} featured={false} />
+                  )
+                )}
               </div>
             ) : (
               <ul className="border-b border-rule">

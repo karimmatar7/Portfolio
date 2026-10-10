@@ -44,6 +44,7 @@
       "showcaseView": "Cards",
       "indexView": "List",
       "visitLabel": "Visit site",
+      "repoLabel": "Repository",
       "list": [
         {
           "id": "lexiplay",
@@ -59,6 +60,11 @@
           "id": "doodley",
           "title": "Doodley",
           "description": "A drawing game for friends or family. Someone draws, everyone else guesses, in real time."
+        },
+        {
+          "id": "jobfalcon",
+          "title": "JobFalcon",
+          "description": "A private Telegram bot I built for my own job search. It hunts software engineering vacancies in the UK that offer visa sponsorship, verifies the sponsorship from each listing's own wording, and ranks the best matches for my profile."
         }
       ]
     },

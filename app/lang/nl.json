@@ -44,6 +44,7 @@
       "showcaseView": "Kaarten",
       "indexView": "Lijst",
       "visitLabel": "Open site",
+      "repoLabel": "Repository",
       "list": [
         {
           "id": "lexiplay",
@@ -59,6 +60,11 @@
           "id": "doodley",
           "title": "Doodley",
           "description": "Een teken spel voor vrienden of familie. Iemand tekent, de rest raadt, en dat realtime."
+        },
+        {
+          "id": "jobfalcon",
+          "title": "JobFalcon",
+          "description": "Een privé-Telegrambot die ik heb gebouwd voor mijn eigen zoektocht naar werk. Hij vindt softwareontwikkelaarsvacatures in het Verenigd Koninkrijk die visumsponsoring aanbieden, verifieert de sponsoring op basis van de tekst van elke vacature en rangschikt de beste matches voor mijn profiel."
         }
       ]
     },

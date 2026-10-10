@@ -45,6 +45,7 @@ export type Messages = {
       showcaseView: string;
       indexView: string;
       visitLabel: string;
+      repoLabel: string;
       list: ProjectCopy[];
     };
     about: {

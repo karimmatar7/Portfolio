@@ -93,6 +93,7 @@ export type Project = {
   title: string;
   description: string;
   link: string;
+  repo?: string;
   seed: number;
 };
 
@@ -123,6 +124,16 @@ export const projects: Project[] = [
       "A creative drawing app for friends or family to draw and guess each other's drawings in real time.",
     link: "https://doodley-eight.vercel.app/",
     seed: 11,
+  },
+  {
+    id: "jobfalcon",
+    index: "04",
+    title: "JobFalcon",
+    description:
+      "A private Telegram bot I built for my own job search. It hunts software engineering vacancies in the UK that offer visa sponsorship, verifies the sponsorship from each listing's own wording, and ranks the best matches for my profile.",
+    link: "https://t.me/JobFalconBot",
+    repo: "https://github.com/karimmatar7/job-falcon",
+    seed: 13,
   },
 ];
 
