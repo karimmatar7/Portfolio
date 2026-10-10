@@ -9,7 +9,7 @@ import { Rule, SectionHeading } from "./ui/SectionHeading";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-const GROUPS = ["frontend", "backend", "tooling"] as const;
+const GROUPS = ["frontend", "backend", "tooling", "game", "design"] as const;
 
 export function AboutAndStack() {
   const { t } = useLocale();

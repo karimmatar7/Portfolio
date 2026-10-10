@@ -85,7 +85,9 @@
       "groups": {
         "frontend": "Front-end",
         "backend": "Back-end",
-        "tooling": "Tools"
+        "tooling": "Tools",
+        "game": "Game dev",
+        "design": "Design"
       }
     },
     "contact": {

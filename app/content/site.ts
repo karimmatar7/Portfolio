@@ -5,7 +5,7 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://karimmatar7.vercel.app"
 ).replace(/\/$/, "");
 
-export type SkillGroupId = "frontend" | "backend" | "tooling";
+export type SkillGroupId = "frontend" | "backend" | "tooling" | "game" | "design";
 
 export type Skill = {
   id: string;
@@ -72,6 +72,13 @@ export const skills: Skill[] = [
     group: "backend",
   },
   { id: "node", name: "Node.js", logoSrc: "/skills/node.svg", group: "backend" },
+  { id: "express", name: "Express.js", logoSrc: "/skills/express.svg", group: "backend" },
+  {
+    id: "rest-api",
+    name: "REST APIs",
+    logoSrc: "/skills/rest-api.svg",
+    group: "backend",
+  },
   { id: "git", name: "Git", logoSrc: "/skills/git.svg", group: "tooling" },
   {
     id: "craft",
@@ -84,6 +91,49 @@ export const skills: Skill[] = [
     name: "Arduino",
     logoSrc: "/skills/arduino.svg",
     group: "tooling",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    logoSrc: "/skills/github.svg",
+    group: "tooling",
+  },
+  {
+    id: "vscode",
+    name: "VSCode",
+    logoSrc: "/skills/vscode.svg",
+    group: "tooling",
+  },
+  {
+    id: "raspberrypi",
+    name: "Raspberry Pi",
+    logoSrc: "/skills/raspberrypi.svg",
+    group: "tooling",
+  },
+  {
+    id: "unreal",
+    name: "Unreal Engine",
+    logoSrc: "/skills/unreal.svg",
+    group: "game",
+  },
+  {
+    id: "blueprints",
+    name: "Blueprints",
+    logoSrc: "/skills/blueprints.svg",
+    group: "game",
+  },
+  {
+    id: "graphic-design",
+    name: "Graphic Design",
+    logoSrc: "/skills/graphic-design.svg",
+    group: "design",
+  },
+  { id: "figma", name: "Figma", logoSrc: "/skills/figma.svg", group: "design" },
+  {
+    id: "adobecc",
+    name: "Adobe CC",
+    logoSrc: "/skills/adobecc.svg",
+    group: "design",
   },
 ];
 
