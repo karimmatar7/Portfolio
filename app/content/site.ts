@@ -2,7 +2,7 @@ export type Locale = "en" | "nl" | "ar";
 
 /** Absolute origin used for canonicals, sitemap and JSON-LD. Set NEXT_PUBLIC_SITE_URL. */
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://karimmatar7.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-orpin-beta-40.vercel.app"
 ).replace(/\/$/, "");
 
 export type SkillGroupId = "frontend" | "backend" | "tooling" | "game" | "design";
