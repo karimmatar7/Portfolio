@@ -30,7 +30,7 @@ export async function generateMetadata({
   const path = `/${locale}`;
 
   return {
-    title: seo.title,
+    title: { absolute: `${seo.title} · ${profile.name}` },
     description: seo.description,
     keywords: [
       "Karim Matar",
@@ -66,7 +66,7 @@ export async function generateMetadata({
       locale: OPEN_GRAPH_LOCALE[locale as Locale],
       images: [
         {
-          url: "/opengraph-image",
+          url: `${path}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `${profile.name}, ${seo.jobTitle}`,
@@ -77,6 +77,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${seo.title} · ${profile.name}`,
       description: seo.description,
+      images: [`${path}/opengraph-image`],
     },
   };
 }

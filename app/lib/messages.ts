@@ -60,7 +60,6 @@ export type EnterInMessages = {
     title: string;
     text: string;
     button: string;
-    note: string;
   };
   footer: {
     back: string;

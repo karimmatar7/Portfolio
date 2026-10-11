@@ -247,9 +247,6 @@ function Shell() {
                     <DownloadIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
                     {copy.download.button}
                   </motion.a>
-                  <p className="meta mt-3 text-center text-ink-mute">
-                    {copy.download.note}
-                  </p>
                 </div>
               </div>
             </div>

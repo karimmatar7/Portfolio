@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono, Instrument_Serif, Noto_Sans_Arabic } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import "../globals.css";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 import { THEME_COLORS } from "@/app/lib/theme";
 import { siteUrl } from "@/app/content/site";
+import { locales } from "@/app/lib/messages";
+import type { Locale } from "@/app/content/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,24 +73,26 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
+
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
   return (
     <html
-      lang="en"
-      dir="ltr"
+      lang={locale}
+      dir={dir}
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${notoArabic.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
-        {/* The language now lives in the URL, so the document attributes come
-            from the path. Runs before paint to avoid a direction flash. */}
-        <Script id="locale-bootstrap" strategy="beforeInteractive">
-          {`try{var m=location.pathname.match(/^\\/(en|nl|ar)/);var l=m?m[1]:"en";var r=document.documentElement;r.lang=l;r.dir=l==="ar"?"rtl":"ltr"}catch(e){}`}
-        </Script>
         {/* Apply the saved theme before first paint so nothing flashes.
             Uses a plain inline <script> (not next/script) to run synchronously
             in the body while parsing. */}

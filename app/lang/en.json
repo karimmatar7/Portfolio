@@ -2,7 +2,7 @@
   "Home": {
     "brand": "Portfolio",
     "seo": {
-      "title": "Karim Matar - Full-stack developer",
+      "title": "Full-stack developer",
       "jobTitle": "Full-stack developer",
       "description": "Karim Matar is a full-stack developer in Belgium. He builds web apps with React and Next.js, and works on the server side with Laravel, PHP and Node.js. Have a look at his projects or send him a message."
     },
@@ -243,8 +243,7 @@
       "eyebrow": "03 — Download",
       "title": "Download the game",
       "text": "Download EnterIn and walk through every experience yourself.",
-      "button": "Download EnterIn",
-      "note": "Hosted on Google Drive"
+      "button": "Download EnterIn"
     },
     "footer": {
       "back": "Back to portfolio",
