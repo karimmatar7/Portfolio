@@ -103,7 +103,7 @@ export default async function LocaleLayout({
             in the body while parsing. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var k='theme';var s;(function(){try{s=localStorage.getItem(k)}catch(e){}})();var m=s==='light'||s==='dark'?s:'system';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;r.classList.toggle('dark',d);r.style.colorScheme=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.setAttribute('content',d?'${THEME_COLORS.dark}':'${THEME_COLORS.light}')}catch(e){}`,
+            __html: `try{var k='theme';var s;(function(){try{s=localStorage.getItem(k)}catch(e){}})();var m=s==='light'||s==='dark'?s:'system';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;r.classList.toggle('dark',d);r.style.colorScheme=d?'dark':'light';var c=d?'${THEME_COLORS.dark}':'${THEME_COLORS.light}';var n=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<n.length;i++)n[i].setAttribute('content',c)}catch(e){}`,
           }}
         />
         <ThemeProvider>{children}</ThemeProvider>

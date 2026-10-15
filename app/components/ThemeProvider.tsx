@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useSyncExternalStore,
+} from "react";
 import { THEME_COLORS, type ResolvedTheme } from "@/app/lib/theme";
 
 type ThemeMode = "light" | "dark" | "system";
@@ -38,8 +45,12 @@ function applyModeToDocument(mode: ThemeMode, resolved: ResolvedTheme): void {
   const root = document.documentElement;
   root.classList.toggle("dark", resolved === "dark");
   root.style.colorScheme = resolved;
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", THEME_COLORS[resolved]);
+  // Next renders one `theme-color` per system scheme and lets the media query
+  // decide. That ignores the visitor's own choice, so point every one of them at
+  // the resolved theme and let it match the page in all cases.
+  for (const meta of document.querySelectorAll('meta[name="theme-color"]')) {
+    meta.setAttribute("content", THEME_COLORS[resolved]);
+  }
   try {
     window.localStorage.setItem(STORAGE_KEY, mode);
   } catch {
@@ -140,6 +151,12 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
+/* Layout effects run before the browser paints, which is what keeps the theme
+   from flashing when it has to be re-applied. On the server the plain effect is
+   used so React does not warn about layout effects during SSR. */
+const useBeforePaintEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const currentMode = useSyncExternalStore(
     subscribe,
@@ -151,6 +168,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     getResolvedSnapshot,
     getServerResolvedSnapshot
   );
+
+  // The layout that renders <html> is keyed by the locale in the URL, so
+  // switching language replaces the <html> element and React re-applies the
+  // attributes it renders. That drops the theme that the bootstrap script had
+  // set imperatively, and the script does not run again, so the theme is put
+  // back here before the first paint of the new language.
+  useBeforePaintEffect(() => {
+    applyModeToDocument(getModeSnapshot(), getResolvedSnapshot());
+  }, []);
 
   const value = useMemo<ThemeContextValue>(
     () => ({ mode: currentMode, resolved: currentResolved, setMode }),
