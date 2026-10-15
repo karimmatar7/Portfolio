@@ -16,40 +16,45 @@ import { useLocale } from "./LocaleProvider";
 import { ArrowUpRight, BrandIcon, GridIcon, ListIcon } from "./Icons";
 import { Reveal } from "./ui/Reveal";
 import { Rule, SectionHeading } from "./ui/SectionHeading";
-import { ProjectArtwork } from "./ui/ProjectArtwork";
 
 const SPRING = { stiffness: 200, damping: 20, mass: 0.5 } as const;
 
-type Item = Project & { host: string; href: string; external: boolean };
+type Item = Project & { host: string; href: string; external: boolean; visitLabel: string };
 
 type View = "showcase" | "index";
 
 function Cover({ item }: { item: Item }) {
-  if (item.image) {
-    const isSvg = item.image.toLowerCase().endsWith(".svg");
+  if (!item.image) {
     return (
-      <>
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          unoptimized={isSvg}
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className={cx(
-            "transition-transform duration-[900ms] ease-editorial group-hover:scale-[1.04]",
-            isSvg ? "p-6 object-contain" : "object-cover"
-          )}
-        />
-        {isSvg ? (
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-tint via-surface to-paper" />
-        ) : (
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/5 to-transparent" />
-        )}
-      </>
+      <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-tint via-surface to-paper" />
     );
   }
 
-  return <ProjectArtwork seed={item.seed} index={item.index} title={item.title} />;
+  const isSvg = item.image.toLowerCase().endsWith(".svg");
+  const isLogo = item.logo ?? isSvg;
+  return (
+    <>
+      {/* Logo backdrop sits behind the mark; the photo scrim sits on top of
+          the screenshot. Both are decorative. */}
+      {isLogo ? (
+        <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-tint via-surface to-paper" />
+      ) : null}
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        unoptimized={isSvg}
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className={cx(
+          "transition-transform duration-[900ms] ease-editorial group-hover:scale-[1.04]",
+          isLogo ? "p-6 object-contain" : "object-cover"
+        )}
+      />
+      {isLogo ? null : (
+        <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/5 to-transparent" />
+      )}
+    </>
+  );
 }
 
 function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
@@ -142,7 +147,7 @@ function ShowcaseCard({ item, featured }: { item: Item; featured: boolean }) {
               {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
               className="group/visit inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink transition-colors hover:text-accent"
             >
-              {t.projects.visitLabel}
+              {item.visitLabel}
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/visit:translate-x-0.5 group-hover/visit:-translate-y-0.5" />
             </a>
           </div>
@@ -225,7 +230,7 @@ function IndexRow({ item }: { item: Item }) {
               {item.host}
             </span>
             <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            <span className="sr-only">{t.projects.visitLabel}</span>
+            <span className="sr-only">{item.visitLabel}</span>
           </a>
         </span>
       </div>
@@ -249,6 +254,7 @@ export function Projects() {
       external,
       href: external ? project.link : `/${locale}${project.link}`,
       host: external ? projectHost(project.link) : copy.caseStudyHost,
+      visitLabel: localized?.visitLabel ?? copy.visitLabel,
     };
   });
 

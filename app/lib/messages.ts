@@ -7,6 +7,8 @@ export type ProjectCopy = {
   id: string;
   title: string;
   description: string;
+  /** Optional per-project CTA label; falls back to the section-level visitLabel. */
+  visitLabel?: string;
 };
 
 export type EnterInShotCopy = {
@@ -82,6 +84,8 @@ export type Messages = {
       contact: string;
       menu: string;
       close: string;
+      /** Accessible name for the section navigation. */
+      sections: string;
       theme: {
         label: string;
         system: string;
@@ -146,19 +150,13 @@ export type Messages = {
       socialTitle: string;
     };
     footer: {
+      /** Optional short description shown in the footer. */
+      description?: string;
       backToTop: string;
       rights: string;
     };
   };
   EnterIn: EnterInMessages;
-};
-
-export const locales: Locale[] = ["en", "nl", "ar"];
-
-export const localeMeta: Record<Locale, { label: string; dir: "ltr" | "rtl" }> = {
-  en: { label: "EN", dir: "ltr" },
-  nl: { label: "NL", dir: "ltr" },
-  ar: { label: "AR", dir: "rtl" },
 };
 
 export const messages: Record<Locale, Messages> = { en, nl, ar };

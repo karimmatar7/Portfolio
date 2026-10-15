@@ -2,22 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EnterInCase } from "@/app/components/enterin/EnterInCase";
 import { enterIn, profile, siteUrl } from "@/app/content/site";
-import type { Locale } from "@/app/content/site";
-import { locales, messages } from "@/app/lib/messages";
+import { messages } from "@/app/lib/messages";
+import { ENTERIN_PATHS, OPEN_GRAPH_LOCALE, isLocale, locales } from "@/app/lib/locales";
 
 export const dynamicParams = false;
-
-const OPEN_GRAPH_LOCALE: Record<Locale, string> = {
-  en: "en_US",
-  nl: "nl_NL",
-  ar: "ar_AR",
-};
-
-const PATHS: Record<Locale, string> = {
-  en: "/en/projects/enterin",
-  nl: "/nl/projects/enterin",
-  ar: "/ar/projects/enterin",
-};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -29,10 +17,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const copy = messages[locale as Locale]?.EnterIn;
-  if (!copy) return {};
+  if (!isLocale(locale)) return {};
 
-  const path = PATHS[locale as Locale];
+  const copy = messages[locale].EnterIn;
+  const path = ENTERIN_PATHS[locale];
 
   return {
     title: copy.meta.title,
@@ -50,8 +38,8 @@ export async function generateMetadata({
     alternates: {
       canonical: path,
       languages: {
-        ...PATHS,
-        "x-default": PATHS.en,
+        ...ENTERIN_PATHS,
+        "x-default": ENTERIN_PATHS.en,
       },
     },
     openGraph: {
@@ -60,7 +48,7 @@ export async function generateMetadata({
       siteName: profile.name,
       title: copy.meta.title,
       description: copy.meta.description,
-      locale: OPEN_GRAPH_LOCALE[locale as Locale],
+      locale: OPEN_GRAPH_LOCALE[locale],
       images: [
         {
           url: enterIn.ogImage,
@@ -85,10 +73,10 @@ export default async function EnterInPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!locales.includes(locale as Locale)) notFound();
+  if (!isLocale(locale)) notFound();
 
-  const copy = messages[locale as Locale].EnterIn;
-  const path = PATHS[locale as Locale];
+  const copy = messages[locale].EnterIn;
+  const path = ENTERIN_PATHS[locale];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -117,7 +105,7 @@ export default async function EnterInPage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <EnterInCase locale={locale as Locale} />
+      <EnterInCase locale={locale} copy={messages[locale]} />
     </>
   );
 }

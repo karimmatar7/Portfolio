@@ -5,7 +5,7 @@ import "../globals.css";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 import { THEME_COLORS } from "@/app/lib/theme";
 import { siteUrl } from "@/app/content/site";
-import { locales } from "@/app/lib/messages";
+import { locales } from "@/app/lib/locales";
 import type { Locale } from "@/app/content/site";
 
 const geistSans = Geist({
@@ -28,10 +28,15 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+// Arabic is only rendered on the /ar pages. Next preloads every declared font
+// by default, which would pull this ~160 KB file on the English and Dutch pages
+// too, so it is loaded on demand by the CSS instead. The other three are used
+// above the fold on all locales and stay preloaded.
 const notoArabic = Noto_Sans_Arabic({
   variable: "--font-noto-arabic",
   subsets: ["arabic"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -41,7 +46,7 @@ export const metadata: Metadata = {
     template: "%s · Karim Matar",
   },
   description:
-    "Karim Matar is a full-stack developer in Belgium. He builds web apps in React and Next.js, with Laravel, PHP and Node.js on the server side.",
+    "Karim Matar is a full-stack developer. He builds web apps in React and Next.js, with Laravel, PHP and Node.js on the server side.",
   applicationName: "Karim Matar",
   authors: [{ name: "Karim Matar" }],
   creator: "Karim Matar",

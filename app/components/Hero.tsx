@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { profile, projects, skills } from "@/app/content/site";
-import { locales } from "@/app/lib/messages";
+import { locales } from "@/app/lib/locales";
 import { EASE } from "@/app/lib/motion";
 import { useLocale } from "./LocaleProvider";
 import { ArrowRight, ArrowUpRight } from "./Icons";
@@ -180,7 +180,6 @@ export function Hero() {
             </div>
             <figcaption className="mt-4 flex items-center justify-between gap-4">
               <span className="meta text-ink-mute">{t.hero.photoCaption}</span>
-              <span className="meta text-ink-mute">{profile.location}</span>
             </figcaption>
           </figure>
         </motion.div>

@@ -20,7 +20,7 @@ export function Rule({ className = "" }: { className?: string }) {
 }
 
 /**
- * Numbered editorial heading. The eyebrow arrives as "01 — Selected work",
+ * Numbered editorial heading. The eyebrow arrives as "01 · Selected work",
  * so the index is pulled out and printed in the accent colour. A missing
  * separator is tolerated: the whole string is then used as the label.
  */
@@ -35,8 +35,8 @@ export function SectionHeading({
   as?: "h2" | "h3";
   className?: string;
 }) {
-  const [index, ...rest] = eyebrow.split(/\s+—\s+/);
-  const label = rest.join(" — ");
+  const [index, ...rest] = eyebrow.split(/\s+[·—–]\s+/);
+  const label = rest.join(" · ");
 
   return (
     <div className={`flex flex-col gap-5 ${className}`}>

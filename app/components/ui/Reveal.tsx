@@ -56,11 +56,11 @@ export function MaskedText({
     <span className={className}>
       {words.map((word, i) => (
         <Fragment key={`${word}-${i}`}>
-          {/* The separator must sit *outside* the clipping box: a space inside
-              an inline-block is trailing white space and gets dropped, which
-              ran every word together ("thewholestackobsessed"). Padding and
-              negative margin cancel out so the glyphs keep their position
-              while descenders and italic overhangs stay unclipped. */}
+          {/* The separator sits outside the clipping box: a space inside an
+              inline-block is trailing white space and gets dropped, which runs
+              words together. Padding and negative margin cancel out, so the
+              glyphs keep their position while descenders and italic overhangs
+              stay unclipped. */}
           <span className="-mx-[0.06em] inline-block overflow-hidden px-[0.06em] pb-[0.14em] align-bottom -mb-[0.14em]">
             <motion.span
               className="inline-block"

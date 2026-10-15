@@ -8,7 +8,7 @@
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   --font-arabic: var(--font-noto-arabic), "Segoe UI", Tahoma, sans-serif;
 
-  /* Semantic palette — every color resolves through the runtime tokens below,
+  /* Semantic palette: every color resolves through the runtime tokens below,
      so all utilities flip when the `.dark` class is applied by the theme
      bootstrap script (runs before first paint, see app/layout.tsx). */
   --color-paper: var(--c-paper);
@@ -22,7 +22,7 @@
   --color-accent-ink: var(--c-accent-ink);
   --color-accent-tint: var(--c-accent-tint);
 
-  /* Constant surfaces that stay the same in both themes — the theater panels
+  /* Constant surfaces that stay the same in both themes: the theater panels
      (EnterIn hero, lightbox, video frame) keep their dark "screening room"
      look on light day, so solid-ink/paper don't flip like the semantic set. */
   --color-solid-ink: #1a1917;
@@ -126,7 +126,7 @@
   text-wrap: pretty;
 }
 
-/* Paper grain — keeps large flat surfaces from looking dead.
+/* Paper grain: keeps large flat surfaces from looking dead.
    Plain CSS, not @utility: nested pseudo-elements are dropped inside
    @utility blocks in Tailwind v4. */
 .grain {
@@ -251,7 +251,7 @@
   }
 }
 
-/* Quiet scrollbar so the page doesn't fight the editorial look */
+/* Quiet scrollbar, matched to the rest of the page */
 @supports (scrollbar-width: thin) {
   html {
     scrollbar-width: thin;

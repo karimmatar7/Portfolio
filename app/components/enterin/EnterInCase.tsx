@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Locale } from "@/app/content/site";
 import { enterIn, profile } from "@/app/content/site";
-import { messages } from "@/app/lib/messages";
+import type { Messages } from "@/app/lib/messages";
 import { EASE } from "@/app/lib/motion";
 import { LocaleProvider, useLocale } from "../LocaleProvider";
 import { LocaleSwitch } from "../Nav";
@@ -14,10 +14,9 @@ import { MaskedText, Reveal } from "../ui/Reveal";
 import { Rule, SectionHeading } from "../ui/SectionHeading";
 import { EnterInGallery } from "./EnterInGallery";
 
-function Shell() {
+function Shell({ copy }: { copy: Messages["EnterIn"] }) {
   const { locale } = useLocale();
   const reduce = useReducedMotion();
-  const copy = messages[locale].EnterIn;
 
   return (
     <>
@@ -275,10 +274,16 @@ function Shell() {
   );
 }
 
-export function EnterInCase({ locale }: { locale: Locale }) {
+export function EnterInCase({
+  locale,
+  copy,
+}: {
+  locale: Locale;
+  copy: Messages;
+}) {
   return (
-    <LocaleProvider locale={locale}>
-      <Shell />
+    <LocaleProvider locale={locale} copy={copy.Home}>
+      <Shell copy={copy.EnterIn} />
     </LocaleProvider>
   );
 }

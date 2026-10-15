@@ -1,6 +1,7 @@
 "use client";
 
 import type { Locale } from "@/app/content/site";
+import type { Messages } from "@/app/lib/messages";
 import { LocaleProvider, useLocale } from "./LocaleProvider";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
@@ -31,9 +32,15 @@ function Shell() {
   );
 }
 
-export function Portfolio({ locale }: { locale: Locale }) {
+export function Portfolio({
+  locale,
+  copy,
+}: {
+  locale: Locale;
+  copy: Messages["Home"];
+}) {
   return (
-    <LocaleProvider locale={locale}>
+    <LocaleProvider locale={locale} copy={copy}>
       <Shell />
     </LocaleProvider>
   );

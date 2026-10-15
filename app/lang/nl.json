@@ -4,7 +4,7 @@
     "seo": {
       "title": "Full-stack developer",
       "jobTitle": "Full-stack developer",
-      "description": "Karim Matar is een full-stack developer in België. Hij bouwt webapps met React en Next.js en werkt aan de serverkant met Laravel, PHP en Node.js. Bekijk zijn projecten of stuur hem een bericht."
+      "description": "Karim Matar is een full-stack developer. Hij bouwt webapps met React en Next.js en werkt aan de serverkant met Laravel, PHP en Node.js. Zijn projecten staan op deze site."
     },
     "nav": {
       "work": "Werk",
@@ -13,6 +13,7 @@
       "contact": "Contact",
       "menu": "Menu",
       "close": "Sluiten",
+      "sections": "Onderdelen",
       "theme": {
         "label": "Thema",
         "system": "Systeem",
@@ -23,30 +24,30 @@
     "hero": {
       "eyebrow": "Full-stack developer",
       "headlineLead": "Ik bouw",
-      "headlineAccessible": "webapps, interfaces, designsystemen, realtimefuncties en API's",
+      "headlineAccessible": "webapps, REST-API's, interfaces, realtimefuncties en automatisering, van de database tot de website online",
       "roles": [
-        "web apps",
+        "webapps",
+        "REST-API's",
         "interfaces",
-        "designsystemen",
         "realtimefuncties",
-        "API's"
+        "automatisering"
       ],
-      "subtext": "Ik ben opgeleid als full-stack developer en werk graag aan beide kanten. Ik werk een feature uit van de database tot aan de interface, en het gedrag en de uitstraling zijn voor mij even belangrijk.",
-      "availability": "Beschikbaar voor nieuw werk",
+      "subtext": "Ik bouw webapps van begin tot eind, van het datamodel en de API tot de interface.",
+      "availability": "Freelance- en klantenwerk",
       "ctaPrimary": "Bekijk mijn werk",
       "ctaSecondary": "Neem contact op",
       "photoAlt": "Karim Matar",
       "photoCaption": "Karim Matar, full-stack developer",
       "stats": [
-        "projecten opgeleverd",
-        "technologieën die ik dagelijks gebruik",
-        "talen waarin ik bouw"
+        "projecten gebouwd",
+        "technologieën die ik gebruik",
+        "talen van deze site"
       ]
     },
     "projects": {
-      "eyebrow": "01 — Geselecteerd werk",
-      "title": "Projecten die ik af heb",
-      "text": "Ze staan allemaal online, en elk project bevat de database, de API, de interface en de deployment. Open een project om het te proberen.",
+      "eyebrow": "01 · Geselecteerd werk",
+      "title": "Projecten die ik heb gebouwd",
+      "text": "Een mix van klantenwerk en eigen projecten. Open er een om meer te lezen, of probeer de live versie waar die er is.",
       "showcaseView": "Kaarten",
       "indexView": "Lijst",
       "visitLabel": "Open site",
@@ -56,44 +57,44 @@
         {
           "id": "lexiplay",
           "title": "LexiPlay",
-          "description": "Een webapp waar kinderen met dyslexie nieuwe woorden leren door spelletjes en quizjes te spelen."
+          "description": "Een leerapp voor kinderen met dyslexie. Nieuwe woorden worden geoefend in vijf korte spelletjes, met een OpenDyslexic-lettertype en een ouderdashboard dat de voortgang bijhoudt."
         },
         {
           "id": "donation",
           "title": "Donatieapp",
-          "description": "Een donatiepagina met betalingen via Mollie, gebouwd voor bezoekers van De Warmste Week."
+          "description": "De donatiepagina voor De Warmste Week. Betalingen lopen via Mollie, elke donatie wordt opgeslagen en meteen naar een live scherm gestuurd, en schenkers kunnen een bevestiging per e-mail krijgen."
         },
         {
           "id": "doodley",
           "title": "Doodley",
-          "description": "Een teken spel voor vrienden of familie. Iemand tekent, de rest raadt, en dat realtime."
+          "description": "Een teken- en raadspel in realtime. Eén speler tekent terwijl de anderen raden in een live chat; hoe sneller je raadt, hoe meer punten. Je komt binnen via een code van vijf tekens of een QR-scan."
         },
         {
           "id": "jobfalcon",
           "title": "JobFalcon",
-          "description": "Een privé-Telegrambot die ik heb gebouwd voor mijn eigen zoektocht naar werk. Hij vindt softwareontwikkelaarsvacatures in het Verenigd Koninkrijk die visumsponsoring aanbieden, verifieert de sponsoring op basis van de tekst van elke vacature en rangschikt de beste matches voor mijn profiel."
+          "description": "Een persoonlijke Telegrambot die softwarevacatures in het Verenigd Koninkrijk zoekt, per vacature de eigen tekst controleert op visumsponsoring en werkgevers verifieert tegen het officiële register van erkende sponsors. Hij draait geplande zoekopdrachten en stuurt alleen een melding bij nieuwe vacatures."
         },
         {
           "id": "enterin",
           "title": "EnterIn",
-          "description": "Een verzameling door films geïnspireerde ervaringen, gebouwd in Unreal Engine 5 in één maand. Doorloop een bioscoop waarin elke deur naar een andere film leidt. Bekroond met een prijs van Arteveldehogeschool."
+          "description": "Een bioscoop die je kunt doorlopen, gebouwd in Unreal Engine 5. Elke deur opent een korte, door een film geïnspireerde ervaring, waaronder een horrorsequentie geïnspireerd op Insidious. In één maand alleen gebouwd en bekroond met een prijs van Arteveldehogeschool."
         }
       ]
     },
     "about": {
-      "eyebrow": "02 — Hoe ik werk",
+      "eyebrow": "02 · Hoe ik werk",
       "title": "Van database tot interface",
       "body": [
-        "Ik werk van begin tot eind: database, API's, businesslogica en de interface erbovenop. Ik hou van beide kanten. Een datamodel of een API maken me net zo gelukkig als een layout, een lege state of een fout die iemand op het slechtste moment tegenkomt.",
-        "Ik houd van een codebase die goed leesbaar blijft. Componenten met één taak, namen die zonder commentaar al zeggen wat ze doen, en één set kleur- en afstandwaarden in plaats van elke keer een nieuwe. Performance en toegankelijkheid zitten in de eerste versie, niet in een opruimronde achteraf.",
-        "Buiten klantwerk om bouw ik kleine dingen om mijn oog scherp te houden. Deze site is waar ik layout, beweging en meertalige ondersteuning test."
+        "Aan Arteveldehogeschool studeerde ik Programmeren, en Grafische en Digitale Media. Ik werk aan beide kanten van een app: het datamodel en de API aan de ene kant, de interface aan de andere.",
+        "Ik hou componenten klein en consistent, gebruik één set kleuren en afstanden, en bouw met toegankelijkheid in gedachten in plaats van die later toe te voegen.",
+        "Buiten klantenwerk om bouw ik eigen projecten. Deze site is er één: hier probeer ik layout, beweging en de drietalige opzet uit."
       ],
-      "pullQuote": "Ik werk aan beide kanten van de stack, en ik hou van beide."
+      "pullQuote": "Ik werk een feature graag helemaal af, niet tot aan de API."
     },
     "stack": {
-      "eyebrow": "03 — Toolkit",
+      "eyebrow": "03 · Toolkit",
       "title": "Wat ik gebruik",
-      "text": "Dit zijn de tools waar ik het vaakst naar grijp. De lijst is bewust kort.",
+      "text": "Tools en technologieën die ik gebruikte in klantenwerk, eigen projecten en mijn opleiding. Ik heb de lijst beperkt tot wat ik echt gebruikt heb.",
       "groups": {
         "frontend": "Front-end",
         "backend": "Back-end",
@@ -103,9 +104,9 @@
       }
     },
     "contact": {
-      "eyebrow": "04 — Contact",
+      "eyebrow": "04 · Contact",
       "title": "Neem contact op",
-      "intro": "Vul het formulier in en het komt in mijn inbox. Ik antwoord op elk bericht. Heb je een project in gedachten, vertel dan wat het moet doen en wanneer het live moet staan.",
+      "intro": "Vul het formulier in en het komt rechtstreeks in mijn inbox. Vertel me waar je aan werkt, dan laat ik iets weten.",
       "nameLabel": "Naam",
       "emailLabel": "E-mail",
       "messageLabel": "Bericht",
@@ -118,18 +119,19 @@
       "button": "Bericht versturen",
       "sending": "Versturen…",
       "success": "Bericht verstuurd. Bedankt.",
-      "error": "Het bericht is niet aangekomen. Probeer het nog eens, of stuur het via een van de accounts rechts.",
+      "error": "Het bericht is niet verzonden. Probeer het opnieuw, of bereik me via GitHub of LinkedIn.",
       "sendAnother": "Nog een bericht sturen",
       "socialTitle": "Elders"
     },
     "footer": {
+      "description": "Webontwikkeling en design",
       "backToTop": "Terug naar boven",
       "rights": "Alle rechten voorbehouden."
     }
   },
   "EnterIn": {
     "meta": {
-      "title": "EnterIn — Unreal Engine 5-ervaringen",
+      "title": "EnterIn · Unreal Engine 5-ervaringen",
       "description": "EnterIn is een verzameling door films geïnspireerde ervaringen, gebouwd in Unreal Engine 5 door Karim Matar in één maand in 2025. Doorloop een bioscoop waarin elke deur naar een andere film leidt, met onder meer een horrorervaring geïnspireerd op Insidious. Bekroond met een prijs van Arteveldehogeschool."
     },
     "back": "Terug naar portfolio",
@@ -137,22 +139,22 @@
       "eyebrow": "Unreal Engine 5 · 2025",
       "title": "EnterIn",
       "lead": "Een bioscoop die je kunt doorlopen, waar elke deur naar een andere film leidt.",
-      "statement": "Ik bouwde EnterIn in één maand in 2025, zonder enige ervaring met game-ontwikkeling op dat moment. Het project won daarna een prijs van Arteveldehogeschool.",
+      "statement": "Ik bouwde EnterIn in één maand in 2025, zonder enige ervaring met game-ontwikkeling op dat moment. Het project won een prijs van Arteveldehogeschool.",
       "award": "Bekroond met een prijs van Arteveldehogeschool · 2025",
       "watch": "Bekijk de video",
       "download": "Download",
       "facts": ["Alleen gebouwd", "Eén maand", "Mijn eerste game"]
     },
     "showcase": {
-      "eyebrow": "01 — De game",
-      "title": "Een bioscoop die je kunt doorlopen",
-      "text": "EnterIn is een bioscoop. Elke deur leidt naar een andere wereld, en elke wereld is een korte ervaring geïnspireerd op een film. De video hieronder is de horrorervaring geïnspireerd op de film Insidious.",
-      "videoCaption": "De Insidious-ervaring — EnterIn"
+      "eyebrow": "01 · De game",
+      "title": "Elke deur een andere film",
+      "text": "EnterIn is een bioscoop. Elke deur leidt naar een andere wereld, en elke wereld is een korte ervaring geïnspireerd op een film. De video hieronder is de horrorervaring gebaseerd op Insidious.",
+      "videoCaption": "De Insidious-ervaring · EnterIn"
     },
     "gallery": {
-      "eyebrow": "02 — Beelden & werelden",
+      "eyebrow": "02 · Beelden & werelden",
       "title": "In elke wereld",
-      "text": "Elke omgeving is een korte, op zichzelf staande ervaring. Open een kader om het op ware grootte te zien en te lezen wat je bekijkt.",
+      "text": "Elke omgeving is een korte ervaring op zich. Open een kader om het op ware grootte te zien.",
       "hint": "Kies een kader om te vergroten",
       "viewLabel": "Open kader",
       "close": "Sluiten",
@@ -177,7 +179,7 @@
             {
               "id": "hall2",
               "title": "Gang 2",
-              "description": "Een tweede blik op de gang."
+              "description": "De gang, verder naar binnen."
             }
           ]
         },
@@ -201,17 +203,17 @@
             {
               "id": "ff1",
               "title": "Fast & Furious I",
-              "description": "De energie van straatraces en neonlicht, vastgelegd in Unreal Engine."
+              "description": "De speler, voordat hij in de auto stapt."
             },
             {
               "id": "ff2",
               "title": "Fast & Furious II",
-              "description": "Een tweede scène uit de Fast & Furious-ervaring."
+              "description": "Verder in de race."
             },
             {
               "id": "ff3",
               "title": "Fast & Furious III",
-              "description": "Het slotbeeld van de Fast & Furious-ervaring."
+              "description": "Het einde van de race."
             }
           ]
         },
@@ -223,24 +225,24 @@
             {
               "id": "httyd1",
               "title": "How to Train Your Dragon I",
-              "description": "Vliegen boven de wolken op de rug van een draak."
+              "description": "De speler, voordat hij in een draak verandert."
             },
             {
               "id": "httyd2",
               "title": "How to Train Your Dragon II",
-              "description": "Een tweede scène uit de drakenervaring."
+              "description": "Verder in de vlucht."
             },
             {
               "id": "httyd3",
               "title": "How to Train Your Dragon III",
-              "description": "Het slotbeeld van de drakenervaring."
+              "description": "Het einde van de vlucht."
             }
           ]
         }
       ]
     },
     "download": {
-      "eyebrow": "03 — Download",
+      "eyebrow": "03 · Download",
       "title": "Download de game",
       "text": "Download EnterIn en doorloop elke ervaring zelf.",
       "button": "Download EnterIn"

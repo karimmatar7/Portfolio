@@ -18,7 +18,7 @@ function readStoredMode(): ThemeMode {
     const stored = window.localStorage.getItem(STORAGE_KEY);
     if (isThemeMode(stored)) return stored;
   } catch {
-    /* storage unavailable — fall back to the system preference */
+    /* storage unavailable: fall back to the system preference */
   }
   return DEFAULT_MODE;
 }
@@ -47,10 +47,10 @@ function applyModeToDocument(mode: ThemeMode, resolved: ResolvedTheme): void {
   }
 }
 
-/* The theme lives outside React in a tiny store. Keeping it out of component
-   state (a) makes the toggle pill reliable across navigations and (b) lets
-   useSyncExternalStore re-sync the UI with the pre-paint document theme that
-   the bootstrap <script> in app/layout.tsx already applied. */
+/* The theme lives outside React in a small store. This keeps the toggle pill
+   reliable across navigations, and lets useSyncExternalStore re-sync the UI
+   with the pre-paint document theme that the bootstrap <script> in
+   app/layout.tsx already applied. */
 
 let mode: ThemeMode = DEFAULT_MODE;
 let resolved: ResolvedTheme = DEFAULT_RESOLVED;

@@ -15,9 +15,19 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="border-t border-rule pt-12">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="font-display text-display leading-[1.02] text-ink">
-              <MaskedText text={t.contact.title} animate stagger={0.05} />
-            </h2>
+            {/* Decorative footer lead. Uses the footer description when a locale
+                provides one, otherwise repeats the contact heading. Kept out of
+                the heading outline so heading navigation does not hit it twice. */}
+            <p
+              className="font-display text-display leading-[1.02] text-ink"
+              aria-hidden="true"
+            >
+              <MaskedText
+                text={t.footer.description ?? t.contact.title}
+                animate
+                stagger={0.05}
+              />
+            </p>
 
             <motion.a
               href="#top"

@@ -11,7 +11,8 @@ import {
 import { cx } from "@/app/lib/cx";
 import { EASE } from "@/app/lib/motion";
 import { profile } from "@/app/content/site";
-import { localeMeta, locales, type Messages } from "@/app/lib/messages";
+import { localeMeta, locales } from "@/app/lib/locales";
+import type { Messages } from "@/app/lib/messages";
 import { useLocale } from "./LocaleProvider";
 import { ThemeSwitch } from "./ThemeSwitch";
 import { ArrowUpRight, CloseIcon, MenuIcon } from "./Icons";
@@ -177,7 +178,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
             <a
               href="#top"
               className="group flex items-center gap-2.5"
-              aria-label={`${profile.name} — ${t.brand}`}
+              aria-label={`${profile.name}, ${t.brand}`}
             >
               <span className="flex h-8 w-8 items-center justify-center border border-ink/80 bg-ink text-paper transition-colors duration-300 group-hover:border-accent group-hover:bg-accent">
                 <span className="font-display text-base italic leading-none">
@@ -187,7 +188,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
               <span className="meta hidden text-ink-mute sm:block">{t.brand}</span>
             </a>
 
-            <nav className="hidden items-center gap-1 md:flex" aria-label="Sections">
+            <nav className="hidden items-center gap-1 md:flex" aria-label={copy.sections}>
               {links.map((link) => {
                 const isActive = active === link.id;
                 return (
@@ -277,7 +278,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
 
             <nav
               className="flex flex-1 flex-col justify-center gap-1 px-5 sm:px-8"
-              aria-label="Sections"
+              aria-label={copy.sections}
             >
               {links.map((link, i) => (
                 <motion.a
@@ -293,7 +294,7 @@ export function Nav({ copy }: { copy: NavCopy }) {
                     ease: EASE,
                   }}
                 >
-                  <span className="meta text-accent">
+                  <span className="meta text-accent" aria-hidden="true">
                     0{i + 1}
                   </span>
                   {link.label}

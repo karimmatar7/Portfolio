@@ -4,7 +4,7 @@
     "seo": {
       "title": "Full-stack developer",
       "jobTitle": "Full-stack developer",
-      "description": "Karim Matar is a full-stack developer in Belgium. He builds web apps with React and Next.js, and works on the server side with Laravel, PHP and Node.js. Have a look at his projects or send him a message."
+      "description": "Karim Matar is a full-stack developer. He builds web apps with React and Next.js, and works on the server side with Laravel, PHP and Node.js. His projects are listed on this site."
     },
     "nav": {
       "work": "Work",
@@ -13,6 +13,7 @@
       "contact": "Contact",
       "menu": "Menu",
       "close": "Close",
+      "sections": "Sections",
       "theme": {
         "label": "Theme",
         "system": "System",
@@ -23,30 +24,30 @@
     "hero": {
       "eyebrow": "Full-stack developer",
       "headlineLead": "I build",
-      "headlineAccessible": "web apps, interfaces, design systems, realtime features and APIs",
+      "headlineAccessible": "web apps, REST APIs, interfaces, realtime features and automation, from the database to the deployed site",
       "roles": [
         "web apps",
+        "REST APIs",
         "interfaces",
-        "design systems",
         "realtime features",
-        "APIs"
+        "automation"
       ],
-      "subtext": "I trained as a full-stack developer and I like working on both sides of it. I take a feature from the database up to the interface, and I care about how it works and how it looks in equal measure.",
-      "availability": "Open to new work",
+      "subtext": "I build web apps end to end, from the data model and the API down to the interface.",
+      "availability": "Freelance and client work",
       "ctaPrimary": "View my work",
       "ctaSecondary": "Contact me",
       "photoAlt": "Karim Matar",
       "photoCaption": "Karim Matar, full-stack developer",
       "stats": [
-        "projects shipped",
-        "technologies I use daily",
-        "languages I build in"
+        "projects built",
+        "technologies I use",
+        "site languages"
       ]
     },
     "projects": {
-      "eyebrow": "01 — Selected work",
-      "title": "Projects I finished",
-      "text": "Every one of them is online, and each covers the database, the API, the interface and the deployment. Open a project to try it.",
+      "eyebrow": "01 · Selected work",
+      "title": "Projects I've built",
+      "text": "A mix of client work and personal projects. Open one to read more, or try the live site where there is one.",
       "showcaseView": "Cards",
       "indexView": "List",
       "visitLabel": "Visit site",
@@ -56,44 +57,44 @@
         {
           "id": "lexiplay",
           "title": "LexiPlay",
-          "description": "A web app where children with dyslexia learn new words by playing games and taking quizzes."
+          "description": "A learning web app for children with dyslexia. New words are practised in five short games, with an OpenDyslexic font option and a parent dashboard that tracks progress."
         },
         {
           "id": "donation",
           "title": "Donation app",
-          "description": "A donation page with Mollie payments, built for visitors of De Warmste Week."
+          "description": "A donation page for De Warmste Week. Payments run through Mollie, each donation is stored and streamed to a live screen, and donors can get a confirmation by email."
         },
         {
           "id": "doodley",
           "title": "Doodley",
-          "description": "A drawing game for friends or family. Someone draws, everyone else guesses, in real time."
+          "description": "A real-time drawing and guessing game. One player draws while the others guess in a live chat; the faster the guess, the more it scores. Players join a room with a five-character code or a QR scan."
         },
         {
           "id": "jobfalcon",
           "title": "JobFalcon",
-          "description": "A private Telegram bot I built for my own job search. It hunts software engineering vacancies in the UK that offer visa sponsorship, verifies the sponsorship from each listing's own wording, and ranks the best matches for my profile."
+          "description": "A personal Telegram bot that searches UK software-engineering vacancies, checks each listing's own wording for visa sponsorship, and verifies employers against the official register of licensed sponsors. It runs scheduled searches and only alerts on new listings."
         },
         {
           "id": "enterin",
           "title": "EnterIn",
-          "description": "A collection of movie-inspired experiences built in Unreal Engine 5 in a single month. Walk through a cinema where every door opens onto a different film. Awarded a prize by Artevelde University."
+          "description": "A walkable cinema built in Unreal Engine 5. Each door opens onto a short film-inspired experience, including a horror sequence based on Insidious. Built solo in a month, and awarded a prize by Artevelde University."
         }
       ]
     },
     "about": {
-      "eyebrow": "02 — How I work",
+      "eyebrow": "02 · How I work",
       "title": "Database to interface",
       "body": [
-        "I work end to end: database, APIs, business logic and the interface on top. I like both sides of that. I am as happy inside a data model or an API as I am on a layout, an empty state, or an error someone hits at the worst possible moment.",
-        "I like a codebase that stays easy to read. Components with one job, names that say what they do without a comment, and one set of colour and spacing values instead of a new one every time. Performance and accessibility go into the first version, not into a cleanup afterwards.",
-        "Outside client work I build small things to keep an eye on detail. This site is where I test layout, motion and multilingual support."
+        "At Artevelde I studied programming, and graphic and digital media. I work on both sides of an app: the data model and the API on one side, the interface on the other.",
+        "I keep components small and consistent, reuse one set of colours and spacing, and build with accessibility in mind instead of adding it later.",
+        "Outside client work I build my own projects. This site is one of them: it's where I try out layout, motion and the three-language setup."
       ],
-      "pullQuote": "I work on both sides of the stack, and I like both."
+      "pullQuote": "I like finishing a feature end to end, not stopping at the API."
     },
     "stack": {
-      "eyebrow": "03 — Toolkit",
+      "eyebrow": "03 · Toolkit",
       "title": "Tools I use",
-      "text": "These are the ones I reach for most. The list is short on purpose.",
+      "text": "Tools and technologies I've used in client work, my own projects and my studies. I've kept the list to things I've worked with.",
       "groups": {
         "frontend": "Front-end",
         "backend": "Back-end",
@@ -103,9 +104,9 @@
       }
     },
     "contact": {
-      "eyebrow": "04 — Contact",
+      "eyebrow": "04 · Contact",
       "title": "Get in touch",
-      "intro": "Fill in the form and it lands in my inbox. I answer every message. If you have a project in mind, tell me what it should do and when it has to be live.",
+      "intro": "Fill in the form and it goes straight to my inbox. Tell me what you're building and I'll get back to you.",
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
@@ -118,18 +119,19 @@
       "button": "Send message",
       "sending": "Sending…",
       "success": "Message sent. Thanks.",
-      "error": "The message did not go through. Try again, or send it to me on one of the accounts on the right.",
+      "error": "The message didn't go through. Try again, or reach me on GitHub or LinkedIn.",
       "sendAnother": "Send another message",
       "socialTitle": "Elsewhere"
     },
     "footer": {
+      "description": "Web development and design",
       "backToTop": "Back to top",
       "rights": "All rights reserved."
     }
   },
   "EnterIn": {
     "meta": {
-      "title": "EnterIn — Unreal Engine 5 experiences",
+      "title": "EnterIn · Unreal Engine 5 experiences",
       "description": "EnterIn is a collection of movie-inspired experiences built in Unreal Engine 5 by Karim Matar in a single month in 2025. Walk through a cinema where each door opens onto a different film, including a horror experience inspired by Insidious. Awarded a prize by Artevelde University."
     },
     "back": "Back to portfolio",
@@ -137,22 +139,22 @@
       "eyebrow": "Unreal Engine 5 · 2025",
       "title": "EnterIn",
       "lead": "A cinema you can walk through, where every door opens onto a different film.",
-      "statement": "I built EnterIn in a single month in 2025, with no game development experience at the time. It went on to win a prize from Artevelde University.",
+      "statement": "I built EnterIn in a single month in 2025, with no game development experience at the time. It won a prize from Artevelde University.",
       "award": "Awarded a prize by Artevelde University · 2025",
       "watch": "Watch the video",
       "download": "Download",
       "facts": ["Built solo", "One month", "First game ever"]
     },
     "showcase": {
-      "eyebrow": "01 — The game",
-      "title": "A cinema you can walk through",
-      "text": "EnterIn is a cinema. Every door leads to a different world, and each one is a short experience inspired by a film. The video below is the horror experience inspired by the movie Insidious.",
-      "videoCaption": "The Insidious experience — EnterIn"
+      "eyebrow": "01 · The game",
+      "title": "Every door, a different film",
+      "text": "EnterIn is a cinema. Every door leads to a different world, and each one is a short experience inspired by a film. The video below is the horror experience based on Insidious.",
+      "videoCaption": "The Insidious experience · EnterIn"
     },
     "gallery": {
-      "eyebrow": "02 — Screens & worlds",
+      "eyebrow": "02 · Screens & worlds",
       "title": "Inside every world",
-      "text": "Each environment is a short, self-contained experience. Open a frame to see it full size and read what you are looking at.",
+      "text": "Each environment is a short experience of its own. Open a frame to see it full size.",
       "hint": "Select a frame to enlarge",
       "viewLabel": "Open frame",
       "close": "Close",
@@ -177,7 +179,7 @@
             {
               "id": "hall2",
               "title": "Hall 2",
-              "description": "A second view of the hall."
+              "description": "The hall from further inside."
             }
           ]
         },
@@ -201,17 +203,17 @@
             {
               "id": "ff1",
               "title": "Fast & Furious I",
-              "description": "Street-racing energy and neon light, captured in Unreal Engine."
+              "description": "The player before getting in the car."
             },
             {
               "id": "ff2",
               "title": "Fast & Furious II",
-              "description": "A second scene from the Fast & Furious experience."
+              "description": "Later in the race."
             },
             {
               "id": "ff3",
               "title": "Fast & Furious III",
-              "description": "The final view from the Fast & Furious experience."
+              "description": "The end of the race."
             }
           ]
         },
@@ -223,24 +225,24 @@
             {
               "id": "httyd1",
               "title": "How to Train Your Dragon I",
-              "description": "Flying above the clouds on a dragon's back."
+              "description": "The player before transforming into a dragon."
             },
             {
               "id": "httyd2",
               "title": "How to Train Your Dragon II",
-              "description": "A second scene from the dragon experience."
+              "description": "Later in the flight."
             },
             {
               "id": "httyd3",
               "title": "How to Train Your Dragon III",
-              "description": "The closing view of the dragon experience."
+              "description": "The end of the flight."
             }
           ]
         }
       ]
     },
     "download": {
-      "eyebrow": "03 — Download",
+      "eyebrow": "03 · Download",
       "title": "Download the game",
       "text": "Download EnterIn and walk through every experience yourself.",
       "button": "Download EnterIn"

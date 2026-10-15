@@ -1,8 +1,8 @@
 import { skills } from "@/app/content/site";
 
 /**
- * Infinite ticker between the hero and the work. Decorative only — the same
- * skills are listed properly in the stack section below.
+ * Skills ticker between the hero and the work. Decorative: the full list is in
+ * the stack section below.
  */
 export function Marquee() {
   const row = [...skills, ...skills];

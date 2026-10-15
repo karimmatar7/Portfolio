@@ -12,7 +12,7 @@ function canHover() {
 }
 
 /**
- * Pulls its child toward the cursor. Used sparingly — on primary actions only.
+ * Pulls its child toward the cursor. Used sparingly, on primary actions only.
  */
 export function Magnetic({
   children,

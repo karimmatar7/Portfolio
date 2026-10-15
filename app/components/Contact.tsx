@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { profile } from "@/app/content/site";
 import { cx } from "@/app/lib/cx";
 import { EASE } from "@/app/lib/motion";
@@ -72,12 +71,16 @@ export function Contact() {
 
     setStatus("loading");
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
-        form,
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "" }
+    // Loaded on demand: the form is the only thing that needs it, so the
+    // library stays out of the initial bundle and is fetched on first submit.
+    import("@emailjs/browser")
+      .then(({ default: emailjs }) =>
+        emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+          form,
+          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "" }
+        )
       )
       .then(
         () => {

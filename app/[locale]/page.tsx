@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Portfolio } from "../components/Portfolio";
 import { projects, profile, skills, siteUrl } from "@/app/content/site";
-import { locales, messages } from "@/app/lib/messages";
+import { messages } from "@/app/lib/messages";
+import {
+  HOME_ALTERNATES,
+  OPEN_GRAPH_LOCALE,
+  homePath,
+  isLocale,
+  locales,
+} from "@/app/lib/locales";
 import type { Locale } from "@/app/content/site";
 
 export const dynamicParams = false;
-
-const OPEN_GRAPH_LOCALE: Record<Locale, string> = {
-  en: "en_US",
-  nl: "nl_NL",
-  ar: "ar_AR",
-};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -23,11 +24,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const messagesForLocale = messages[locale as Locale];
-  if (!messagesForLocale) return {};
+  if (!isLocale(locale)) return {};
+
+  const messagesForLocale = messages[locale];
 
   const { seo } = messagesForLocale.Home;
-  const path = `/${locale}`;
+  const path = homePath(locale);
 
   return {
     title: { absolute: `${seo.title} · ${profile.name}` },
@@ -35,12 +37,11 @@ export async function generateMetadata({
     keywords: [
       "Karim Matar",
       "full stack developer",
-      "full stack developer Belgium",
       "React developer",
       "Next.js developer",
       "Laravel developer",
       "PHP developer",
-      "web developer Belgium",
+      "web developer",
       "freelance developer",
       "portfolio",
       ...skills.map((skill) => skill.name),
@@ -50,12 +51,7 @@ export async function generateMetadata({
     publisher: profile.name,
     alternates: {
       canonical: path,
-      languages: {
-        en: "/en",
-        nl: "/nl",
-        ar: "/ar",
-        "x-default": "/en",
-      },
+      languages: HOME_ALTERNATES,
     },
     openGraph: {
       type: "profile",
@@ -63,7 +59,7 @@ export async function generateMetadata({
       siteName: profile.name,
       title: `${seo.title} · ${profile.name}`,
       description: seo.description,
-      locale: OPEN_GRAPH_LOCALE[locale as Locale],
+      locale: OPEN_GRAPH_LOCALE[locale],
       images: [
         {
           url: `${path}/opengraph-image`,
@@ -83,8 +79,8 @@ export async function generateMetadata({
 }
 
 /**
- * Structured data for search engines and AI answer engines. Everything in it
- * is stated plainly on the page, so a crawler can quote it without guessing.
+ * schema.org data for the site: the person, the site itself, and the project
+ * list. The values come from the same content the page renders.
  */
 function structuredData(locale: Locale) {
   const { seo } = messages[locale].Home;
@@ -100,10 +96,6 @@ function structuredData(locale: Locale) {
       image: `${siteUrl}/pics/me.jpeg`,
       description: seo.description,
       jobTitle: seo.jobTitle,
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "BE",
-      },
       knowsLanguage: locales,
       knowsAbout: skills.map((skill) => skill.name),
       sameAs: profile.socials.map((social) => social.href),
@@ -146,9 +138,9 @@ export default async function LocalePage({
 }) {
   const { locale } = await params;
 
-  if (!locales.includes(locale as Locale)) notFound();
+  if (!isLocale(locale)) notFound();
 
-  const jsonLd = structuredData(locale as Locale)
+  const jsonLd = structuredData(locale)
     .map((entry) => JSON.stringify(entry).replace(/</g, "\\u003c"))
     .join("");
 
@@ -158,7 +150,7 @@ export default async function LocalePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd }}
       />
-      <Portfolio locale={locale as Locale} />
+      <Portfolio locale={locale} copy={messages[locale].Home} />
     </>
   );
 }

@@ -18,7 +18,6 @@ export const profile = {
   name: "Karim Matar",
   shortName: "Karim",
   monogram: "KM",
-  location: "Belgium",
   photoSrc: "/pics/me.jpeg",
   socials: [
     {
@@ -32,12 +31,6 @@ export const profile = {
       name: "LinkedIn",
       handle: "karim-matar",
       href: "https://www.linkedin.com/in/karim-matar-81427224b/",
-    },
-    {
-      id: "instagram",
-      name: "Instagram",
-      handle: "@karim.matar7",
-      href: "https://www.instagram.com/karim.matar7",
     },
   ],
 };
@@ -144,9 +137,10 @@ export type Project = {
   description: string;
   link: string;
   repo?: string;
-  seed: number;
-  /** Real cover screenshot. Falls back to the generative artwork when missing. */
+  /** Real cover screenshot. */
   image?: string;
+  /** Raster logo/brand mark: contain it on a backdrop instead of cropping. */
+  logo?: boolean;
   /** In-site case study: `link` is a path relative to the locale root. */
   internal?: boolean;
 };
@@ -157,48 +151,48 @@ export const projects: Project[] = [
     index: "01",
     title: "LexiPlay",
     description:
-      "A gamified web application that helps children with dyslexia learn new words through interactive games and quizzes.",
+      "A learning web app for children with dyslexia. New words are practised in five short games, with an OpenDyslexic font option and a parent dashboard that tracks progress.",
     link: "https://lexi-play-red.vercel.app/",
-    seed: 3,
+    image: "/pics/lexi.webp",
   },
   {
     id: "donation",
     index: "02",
     title: "Donation app",
     description:
-      "A donation environment using Mollie for visitors of De Warmste Week.",
+      "A donation page for De Warmste Week. Payments run through Mollie, each donation is stored and streamed to a live screen, and donors can get a confirmation by email.",
     link: "https://dwne-donation.vercel.app/",
-    seed: 7,
+    image: "/pics/donation.webp",
   },
   {
     id: "doodley",
     index: "03",
     title: "Doodley",
     description:
-      "A creative drawing app for friends or family to draw and guess each other's drawings in real time.",
+      "A real-time drawing and guessing game. One player draws while the others guess in a live chat; the faster the guess, the more it scores. Players join a room with a five-character code or a QR scan.",
     link: "https://doodley-eight.vercel.app/",
-    seed: 11,
+    image: "/pics/doodley.webp",
   },
   {
     id: "jobfalcon",
     index: "04",
     title: "JobFalcon",
     description:
-      "A private Telegram bot I built for my own job search. It hunts software engineering vacancies in the UK that offer visa sponsorship, verifies the sponsorship from each listing's own wording, and ranks the best matches for my profile.",
+      "A personal Telegram bot that searches UK software-engineering vacancies, checks each listing's own wording for visa sponsorship, and verifies employers against the official register of licensed sponsors. It runs scheduled searches and only alerts on new listings.",
     link: "https://t.me/JobFalconBot",
     repo: "https://github.com/karimmatar7/job-falcon",
-    seed: 13,
+    image: "/pics/telegram.webp",
+    logo: true,
   },
   {
     id: "enterin",
     index: "05",
     title: "EnterIn",
     description:
-      "A collection of movie-inspired experiences built in Unreal Engine 5 in a single month. Walk through a cinema where every door opens onto a different film.",
+      "A walkable cinema built in Unreal Engine 5. Each door opens onto a short film-inspired experience, including a horror sequence based on Insidious. Built solo in a month, and awarded a prize by Artevelde University.",
     link: "/projects/enterin",
     image: "/UE5/unreal-logo.svg",
     internal: true,
-    seed: 5,
   },
 ];
 
