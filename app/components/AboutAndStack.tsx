@@ -56,8 +56,8 @@ export function AboutAndStack() {
 
           <div className="mt-10 space-y-10">
             {grouped.map((group, g) => (
-              <Reveal key={group.id} delay={g * 0.08}>
-                <div>
+              <div key={group.id}>
+                <Reveal delay={g * 0.08}>
                   <div className="flex items-center justify-between">
                     <h3 className="meta text-ink-mute">{group.label}</h3>
                     <span className="meta text-ink-mute">
@@ -65,38 +65,58 @@ export function AboutAndStack() {
                     </span>
                   </div>
                   <Rule className="mt-3" />
-                  <div className="mt-5 flex flex-wrap gap-2 sm:gap-3">
-                    {group.items.map((skill, i) => (
-                      <motion.div
-                        key={skill.id}
-                        className="group inline-flex items-center gap-2.5 border border-rule bg-surface px-3 py-2 transition-all duration-300 hover:border-ink/30"
-                        initial={{ opacity: 0, y: reduce ? 0 : 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: reduce ? 0.01 : 0.4,
-                          delay: g * 0.05 + i * 0.01,
-                          ease: EASE,
-                        }}
-                        whileHover={{ y: -2 }}
-                      >
-                        <span className="relative grid h-7 w-7 place-items-center">
-                          <span className="absolute inset-0 bg-ink/5" />
-                          <Image
-                            src={skill.logoSrc}
-                            alt=""
-                            width={20}
-                            height={20}
-                            loading="lazy"
-                            className="h-5 w-5 object-contain transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </span>
-                        <span className="text-sm text-ink">{skill.name}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
+
+                {/* The chips carry their own reveal, so they stay outside the
+                    Reveal above: a chip that both rises with the block and
+                    staggers on its own reads as two movements. The chip is also
+                    limited to colour transitions, otherwise the browser eases
+                    the transform and opacity Framer Motion writes per frame. */}
+                <motion.div
+                  className="mt-5 flex flex-wrap gap-2 sm:gap-3"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-10% 0px" }}
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: { staggerChildren: reduce ? 0 : 0.05 },
+                    },
+                  }}
+                >
+                  {group.items.map((skill) => (
+                    <motion.div
+                      key={skill.id}
+                      className="group inline-flex items-center gap-2.5 border border-rule bg-surface px-3 py-2 transition-colors duration-300 hover:border-ink/30"
+                      variants={{
+                        hidden: { opacity: 0, y: reduce ? 0 : 10 },
+                        visible: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            duration: reduce ? 0.01 : 0.4,
+                            ease: EASE,
+                          },
+                        },
+                      }}
+                      whileHover={{ y: -2 }}
+                    >
+                      <span className="relative grid h-7 w-7 place-items-center">
+                        <span className="absolute inset-0 bg-ink/5" />
+                        <Image
+                          src={skill.logoSrc}
+                          alt=""
+                          width={20}
+                          height={20}
+                          loading="lazy"
+                          className="h-5 w-5 object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </span>
+                      <span className="text-sm text-ink">{skill.name}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
             ))}
           </div>
         </div>
