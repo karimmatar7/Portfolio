@@ -47,13 +47,30 @@
     "projects": {
       "eyebrow": "01 · Geselecteerd werk",
       "title": "Projecten die ik heb gebouwd",
-      "text": "Een mix van klantenwerk en eigen projecten. Open er een om meer te lezen, of probeer de live versie waar die er is.",
-      "showcaseView": "Kaarten",
-      "indexView": "Lijst",
+      "text": "Klantenwerk, studieprojecten en persoonlijke builds. Open er een om meer te lezen, of probeer de live versie waar die er is.",
+      "moreLabel": "Meer projecten",
       "visitLabel": "Open site",
       "repoLabel": "Repository",
       "caseStudyHost": "Projectpagina",
+      "filterLabel": "Filter projecten op categorie",
+      "categories": {
+        "all": "Alle projecten",
+        "customer": "Klantenprojecten",
+        "education": "Opleidingsprojecten",
+        "personal": "Persoonlijke projecten"
+      },
+      "shortCategories": {
+        "all": "Alles",
+        "customer": "Klanten",
+        "education": "Opleiding",
+        "personal": "Persoonlijk"
+      },
       "list": [
+        {
+          "id": "bytefleet",
+          "title": "ByteFleet",
+          "description": "Een website voor een Belgisch taxi- en chauffeursbedrijf. Bezoekers plannen een rit met ophaallocatie, bestemming, datum en aantal passagiers, bekijken de diensten en het wagenpark, en de site is beschikbaar in het Engels, Frans en Nederlands."
+        },
         {
           "id": "lexiplay",
           "title": "LexiPlay",

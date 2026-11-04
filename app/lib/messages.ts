@@ -1,4 +1,4 @@
-import type { Locale, SkillGroupId } from "@/app/content/site";
+import type { Locale, ProjectCategory, SkillGroupId } from "@/app/content/site";
 import en from "@/app/lang/en.json";
 import nl from "@/app/lang/nl.json";
 import ar from "@/app/lang/ar.json";
@@ -110,11 +110,15 @@ export type Messages = {
       eyebrow: string;
       title: string;
       text: string;
-      showcaseView: string;
-      indexView: string;
+      moreLabel: string;
       visitLabel: string;
       repoLabel: string;
       caseStudyHost: string;
+      /** Accessible label for the category filter. */
+      filterLabel: string;
+      categories: Record<ProjectCategory, string> & { all: string };
+      /** Shorter category labels for the mobile filter. */
+      shortCategories: Record<ProjectCategory, string> & { all: string };
       list: ProjectCopy[];
     };
     about: {

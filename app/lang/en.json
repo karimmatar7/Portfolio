@@ -47,13 +47,30 @@
     "projects": {
       "eyebrow": "01 · Selected work",
       "title": "Projects I've built",
-      "text": "A mix of client work and personal projects. Open one to read more, or try the live site where there is one.",
-      "showcaseView": "Cards",
-      "indexView": "List",
+      "text": "Client work, study projects and personal builds. Open one to read more, or try the live site where there is one.",
+      "moreLabel": "More projects",
       "visitLabel": "Visit site",
       "repoLabel": "Repository",
       "caseStudyHost": "Case study",
+      "filterLabel": "Filter projects by category",
+      "categories": {
+        "all": "All projects",
+        "customer": "Customer projects",
+        "education": "Education projects",
+        "personal": "Personal projects"
+      },
+      "shortCategories": {
+        "all": "All",
+        "customer": "Customer",
+        "education": "Education",
+        "personal": "Personal"
+      },
       "list": [
+        {
+          "id": "bytefleet",
+          "title": "ByteFleet",
+          "description": "A premium taxi and chauffeur website for a Belgian transport company. Visitors can plan a ride with pickup, destination, date and passenger details, browse the services and fleet, and the site is available in English, French and Dutch."
+        },
         {
           "id": "lexiplay",
           "title": "LexiPlay",

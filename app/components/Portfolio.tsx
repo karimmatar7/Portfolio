@@ -16,7 +16,6 @@ function Shell() {
 
   return (
     <>
-
       <Nav copy={t.nav} />
 
       <main id="main" className="flex-1">

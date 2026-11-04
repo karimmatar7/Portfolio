@@ -1,3 +1,5 @@
+import projectsData from "./projects.json";
+
 export type Locale = "en" | "nl" | "ar";
 
 /** Absolute origin used for canonicals, sitemap and JSON-LD. Set NEXT_PUBLIC_SITE_URL. */
@@ -130,6 +132,8 @@ export const skills: Skill[] = [
   },
 ];
 
+export type ProjectCategory = "customer" | "education" | "personal";
+
 export type Project = {
   id: string;
   index: string;
@@ -143,58 +147,11 @@ export type Project = {
   logo?: boolean;
   /** In-site case study: `link` is a path relative to the locale root. */
   internal?: boolean;
+  /** Used to group the project list: client work, study projects or personal builds. */
+  category: ProjectCategory;
 };
 
-export const projects: Project[] = [
-  {
-    id: "lexiplay",
-    index: "01",
-    title: "LexiPlay",
-    description:
-      "A learning web app for children with dyslexia. New words are practised in five short games, with an OpenDyslexic font option and a parent dashboard that tracks progress.",
-    link: "https://lexi-play-red.vercel.app/",
-    image: "/pics/lexi.webp",
-  },
-  {
-    id: "donation",
-    index: "02",
-    title: "Donation app",
-    description:
-      "A donation page for De Warmste Week. Payments run through Mollie, each donation is stored and streamed to a live screen, and donors can get a confirmation by email.",
-    link: "https://dwne-donation.vercel.app/",
-    image: "/pics/donation.webp",
-  },
-  {
-    id: "doodley",
-    index: "03",
-    title: "Doodley",
-    description:
-      "A real-time drawing and guessing game. One player draws while the others guess in a live chat; the faster the guess, the more it scores. Players join a room with a five-character code or a QR scan.",
-    link: "https://doodley-eight.vercel.app/",
-    image: "/pics/doodley.webp",
-  },
-  {
-    id: "jobfalcon",
-    index: "04",
-    title: "JobFalcon",
-    description:
-      "A personal Telegram bot that searches UK software-engineering vacancies, checks each listing's own wording for visa sponsorship, and verifies employers against the official register of licensed sponsors. It runs scheduled searches and only alerts on new listings.",
-    link: "https://t.me/JobFalconBot",
-    repo: "https://github.com/karimmatar7/job-falcon",
-    image: "/pics/telegram.webp",
-    logo: true,
-  },
-  {
-    id: "enterin",
-    index: "05",
-    title: "EnterIn",
-    description:
-      "A walkable cinema built in Unreal Engine 5. Each door opens onto a short film-inspired experience, including a horror sequence based on Insidious. Built solo in a month, and awarded a prize by Artevelde University.",
-    link: "/projects/enterin",
-    image: "/UE5/unreal-logo.svg",
-    internal: true,
-  },
-];
+export const projects: Project[] = projectsData as Project[];
 
 /**
  * EnterIn case study media. Chapters and shots are matched to their

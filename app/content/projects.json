@@ -1,0 +1,59 @@
+[
+  {
+    "id": "bytefleet",
+    "index": "01",
+    "title": "ByteFleet",
+    "description": "A premium taxi and chauffeur website for a Belgian transport company. Visitors can plan a ride with pickup, destination, date and passenger details, browse the services and fleet, and the site is available in English, French and Dutch.",
+    "link": "https://www.bytefleet.be",
+    "image": "/pics/bytefleet.webp",
+    "category": "customer"
+  },
+  {
+    "id": "lexiplay",
+    "index": "02",
+    "title": "LexiPlay",
+    "description": "A learning web app for children with dyslexia. New words are practised in five short games, with an OpenDyslexic font option and a parent dashboard that tracks progress.",
+    "link": "https://lexi-play-red.vercel.app/",
+    "image": "/pics/lexi.webp",
+    "category": "education"
+  },
+  {
+    "id": "donation",
+    "index": "03",
+    "title": "Donation app",
+    "description": "A donation page for De Warmste Week. Payments run through Mollie, each donation is stored and streamed to a live screen, and donors can get a confirmation by email.",
+    "link": "https://dwne-donation.vercel.app/",
+    "image": "/pics/donation.webp",
+    "category": "education"
+  },
+  {
+    "id": "doodley",
+    "index": "04",
+    "title": "Doodley",
+    "description": "A real-time drawing and guessing game. One player draws while the others guess in a live chat; the faster the guess, the more it scores. Players join a room with a five-character code or a QR scan.",
+    "link": "https://doodley-eight.vercel.app/",
+    "image": "/pics/doodley.webp",
+    "category": "education"
+  },
+  {
+    "id": "enterin",
+    "index": "05",
+    "title": "EnterIn",
+    "description": "A walkable cinema built in Unreal Engine 5. Each door opens onto a short film-inspired experience, including a horror sequence based on Insidious. Built solo in a month, and awarded a prize by Artevelde University.",
+    "link": "/projects/enterin",
+    "image": "/UE5/unreal-logo.svg",
+    "internal": true,
+    "category": "education"
+  },
+  {
+    "id": "jobfalcon",
+    "index": "06",
+    "title": "JobFalcon",
+    "description": "A personal Telegram bot that searches UK software-engineering vacancies, checks each listing's own wording for visa sponsorship, and verifies employers against the official register of licensed sponsors. It runs scheduled searches and only alerts on new listings.",
+    "link": "https://t.me/JobFalconBot",
+    "repo": "https://github.com/karimmatar7/job-falcon",
+    "image": "/pics/telegram.webp",
+    "logo": true,
+    "category": "personal"
+  }
+]
