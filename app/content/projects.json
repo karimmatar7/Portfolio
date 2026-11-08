@@ -33,7 +33,7 @@
     "description": "A real-time drawing and guessing game. One player draws while the others guess in a live chat; the faster the guess, the more it scores. Players join a room with a five-character code or a QR scan.",
     "link": "https://doodley-eight.vercel.app/",
     "image": "/pics/doodley.webp",
-    "category": "education"
+    "category": "personal"
   },
   {
     "id": "enterin",
